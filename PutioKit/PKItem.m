@@ -26,9 +26,9 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import "Item.h"
+#import "PKItem.h"
 
-@implementation Item
+@implementation PKItem
 
 @synthesize item_id;
 @synthesize name;
@@ -41,7 +41,7 @@
 @synthesize file_icon_url;
 @synthesize download_url;
 
-- (Item *) initWithDict: (NSDictionary *) dict
+- (PKItem *) initWithDict: (NSDictionary *) dict
 {
     self = [super init];
     

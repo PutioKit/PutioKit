@@ -26,8 +26,15 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
+/*
+    PKManager provides a singleton for information management at single point.
+*/
 @interface PKManager : NSObject
-
-+ (id)sharedManager;
+ 
+/*
+    Returns the shared instance of manager.
+    @return sharedManager
+*/
++ (PKManager *)sharedManager;
 
 @end

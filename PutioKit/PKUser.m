@@ -26,9 +26,9 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import "User.h"
+#import "PKUser.h"
 
-@implementation User
+@implementation PKUser
 
 @synthesize user_id;
 @synthesize user_name;
@@ -36,7 +36,7 @@
 @synthesize api_key;
 @synthesize api_secret;
 
-- (User *) initWithDict: (NSDictionary *) dict
+- (PKUser *) initWithDict: (NSDictionary *) dict
 {
     self = [super init];
     

@@ -30,7 +30,7 @@
 
 @implementation PKManager
 
-static id sharedManager = nil;
+static PKManager *sharedManager = nil;
 
 + (void)initialize {
     if (self == [PKManager class]) {
@@ -38,7 +38,7 @@ static id sharedManager = nil;
     }
 }
 
-+ (id)sharedManager {
++ (PKManager *)sharedManager {
     return sharedManager;
 }
 

@@ -28,7 +28,7 @@
 
 #import <Foundation/NSObject.h>
 
-@interface Transfer : NSObject
+@interface PKTransfer : NSObject
 {
     @private
     NSString *transfer_id;
@@ -42,6 +42,6 @@
 @property (retain) NSString * status;
 @property (retain) NSString * percent_done;
 
-- (Transfer *) initWithDict: (NSDictionary *) dict;
+- (PKTransfer *) initWithDict: (NSDictionary *) dict;
 
 @end

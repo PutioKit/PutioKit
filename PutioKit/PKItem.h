@@ -28,7 +28,7 @@
 
 #import <Foundation/NSObject.h>
 
-@interface Item : NSObject
+@interface PKItem : NSObject
 {
     @private
     NSString *item_id;
@@ -54,6 +54,6 @@
 @property (retain) NSString * file_icon_url;
 @property (retain) NSString * download_url;
 
-- (Item *) initWithDict: (NSDictionary *) dict;
+- (PKItem *) initWithDict: (NSDictionary *) dict;
 
 @end

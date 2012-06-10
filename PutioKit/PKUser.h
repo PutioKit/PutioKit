@@ -28,7 +28,7 @@
 
 #import <Foundation/NSObject.h>
 
-@interface User : NSObject
+@interface PKUser : NSObject
 {
     @private
     NSString *user_id;
@@ -44,6 +44,6 @@
 @property (retain) NSString * api_key;
 @property (retain) NSString * api_secret;
 
-- (User *) initWithDict: (NSDictionary *) dict;
+- (PKUser *) initWithDict: (NSDictionary *) dict;
 
 @end

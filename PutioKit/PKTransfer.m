@@ -26,16 +26,16 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import "Transfer.h"
+#import "PKTransfer.h"
 
-@implementation Transfer
+@implementation PKTransfer
 
 @synthesize transfer_id;
 @synthesize name;
 @synthesize status;
 @synthesize percent_done;
 
-- (Transfer *) initWithDict: (NSDictionary *) dict
+- (PKTransfer *) initWithDict: (NSDictionary *) dict
 {
     self = [super init];
     
