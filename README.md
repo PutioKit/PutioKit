@@ -1,4 +1,4 @@
-# PutioKit ![Project status](http://stillmaintained.com/ahmet/PutioKit.png)
+# PutioKit
 
 It's a simple library to use Put.io API in your iOS applications, written in Objective-C.
 
