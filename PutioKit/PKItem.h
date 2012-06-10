@@ -1,5 +1,5 @@
 //
-//  Item.h
+//  PKItem.h
 //  PutioKit
 //
 //  Copyright (c) 2012 Ahmet AYGÜN

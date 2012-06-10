@@ -1,5 +1,5 @@
 //
-//  Transfer.m
+//  PKTransfer.m
 //  PutioKit
 //
 //  Copyright (c) 2012 Ahmet AYGÜN

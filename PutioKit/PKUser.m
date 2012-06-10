@@ -1,5 +1,5 @@
 //
-//  User.m
+//  PKUser.m
 //  PutioKit
 //
 //  Copyright (c) 2012 Ahmet AYGÜN
