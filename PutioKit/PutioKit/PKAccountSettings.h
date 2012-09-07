@@ -1,5 +1,5 @@
 //
-//  PKUser.m
+//  PKAccountSettings.h
 //  PutioKit
 //
 //  Copyright (c) 2012 Ahmet AYGÜN
@@ -12,10 +12,10 @@
 //  copies of the Software, and to permit persons to whom the
 //  Software is furnished to do so, subject to the following
 //  conditions:
-//  
+//
 //  The above copyright notice and this permission notice shall be
 //  included in all copies or substantial portions of the Software.
-//  
+//
 //  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
 //  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
 //  OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -26,29 +26,27 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import "PKUser.h"
+#import <Foundation/NSObject.h>
 
-@implementation PKUser
+@interface PKAccountSettings : NSObject
 
-@synthesize user_id;
-@synthesize user_name;
-@synthesize access_token;
-@synthesize api_key;
-@synthesize api_secret;
+/** ID of folder that downloaded files put in by default. */
+@property (nonatomic) NSUInteger default_download_folder;
 
-- (PKUser *) initWithDict: (NSDictionary *) dict
-{
-    self = [super init];
-    
-    if (self) {
-        self.user_id = [dict valueForKey:@"user_id"];
-        self.user_name = [dict valueForKey:@"user_name"];
-        self.access_token = [dict valueForKey:@"access_token"];
-        self.api_key = [dict valueForKey:@"api_key"];
-        self.api_secret = [dict valueForKey:@"api_secret"];
-    }
-    
-    return self;
-}
+/** Boolean value that defines user is invisible in sharing page. */
+@property (nonatomic) BOOL is_invisible;
+
+/** Boolean value that defines "items shared with you" folder is visible or not. */
+@property (nonatomic) BOOL hide_items_shared;
+
+/** Boolean value that defines extraction of downloaded files is enabled by default or not. */
+@property (nonatomic) BOOL extraction_default;
+
+/**
+ Initializes an PKAccountSettings object with given dictionary, returned from API, and returns the instance.
+ @param dictionary A NSDictionary object contains data obtained from API.
+ @return PKAccountSettings
+ */
+- (PKAccountSettings *)initWithDictionary:(NSDictionary *)dictionary;
 
 @end

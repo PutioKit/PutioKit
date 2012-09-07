@@ -1,5 +1,5 @@
 //
-//  PKTransfer.h
+//  PKFriend.h
 //  PutioKit
 //
 //  Copyright (c) 2012 Ahmet AYGÜN
@@ -12,10 +12,10 @@
 //  copies of the Software, and to permit persons to whom the
 //  Software is furnished to do so, subject to the following
 //  conditions:
-//  
+//
 //  The above copyright notice and this permission notice shall be
 //  included in all copies or substantial portions of the Software.
-//  
+//
 //  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
 //  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
 //  OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -28,20 +28,16 @@
 
 #import <Foundation/NSObject.h>
 
-@interface PKTransfer : NSObject
-{
-    @private
-    NSString *transfer_id;
-    NSString *name;
-    NSString *status;
-    NSString *percent_done;
-}
+@interface PKFriend : NSObject
 
-@property (retain) NSString * transfer_id;
-@property (retain) NSString * name;
-@property (retain) NSString * status;
-@property (retain) NSString * percent_done;
+/** Username of friend. */
+@property (strong, nonatomic) NSString *name;
 
-- (PKTransfer *) initWithDict: (NSDictionary *) dict;
+/**
+ Initializes an PKFriend object with given dictionary, returned from API, and returns the instance.
+ @param dictionary A NSDictionary object contains data obtained from API.
+ @return PKFriend
+ */
+- (PKFriend *)initWithDictionary:(NSDictionary *)dictionary;
 
 @end

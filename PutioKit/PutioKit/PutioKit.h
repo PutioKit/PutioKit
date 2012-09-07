@@ -26,8 +26,5 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import <Foundation/Foundation.h>
-
-@interface PutioKit : NSObject
-
-@end
+#import "PKManager.h"
+#import "PKAccount.h"

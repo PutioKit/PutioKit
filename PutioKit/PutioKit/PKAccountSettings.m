@@ -1,5 +1,5 @@
 //
-//  PKTransfer.m
+//  PKAccountSettings.m
 //  PutioKit
 //
 //  Copyright (c) 2012 Ahmet AYGÜN
@@ -12,10 +12,10 @@
 //  copies of the Software, and to permit persons to whom the
 //  Software is furnished to do so, subject to the following
 //  conditions:
-//  
+//
 //  The above copyright notice and this permission notice shall be
 //  included in all copies or substantial portions of the Software.
-//  
+//
 //  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
 //  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
 //  OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -26,24 +26,24 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import "PKTransfer.h"
+#import "PKAccountSettings.h"
 
-@implementation PKTransfer
+@implementation PKAccountSettings
 
-@synthesize transfer_id;
-@synthesize name;
-@synthesize status;
-@synthesize percent_done;
+@synthesize default_download_folder;
+@synthesize is_invisible;
+@synthesize hide_items_shared;
+@synthesize extraction_default;
 
-- (PKTransfer *) initWithDict: (NSDictionary *) dict
+- (PKAccountSettings *)initWithDictionary:(NSDictionary *)dictionary
 {
     self = [super init];
     
     if (self) {
-        self.transfer_id = [dict valueForKey:@"id"];
-        self.name = [dict valueForKey:@"name"];
-        self.status = [dict valueForKey:@"status"];
-        self.percent_done = [dict valueForKey:@"percent_done"];
+        self.default_download_folder = [[[dictionary valueForKey:@"settings"] valueForKey:@"default_download_folder"] integerValue];
+        self.is_invisible = [[[dictionary valueForKey:@"settings"] valueForKey:@"is_invisible"] boolValue];
+        self.hide_items_shared = [[[dictionary valueForKey:@"settings"] valueForKey:@"hide_items_shared"] boolValue];
+        self.extraction_default = [[[dictionary valueForKey:@"settings"] valueForKey:@"extraction_default"] boolValue];
     }
     
     return self;

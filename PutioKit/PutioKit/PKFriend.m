@@ -1,5 +1,5 @@
 //
-//  PKUser.h
+//  PKFriend.m
 //  PutioKit
 //
 //  Copyright (c) 2012 Ahmet AYGÜN
@@ -12,10 +12,10 @@
 //  copies of the Software, and to permit persons to whom the
 //  Software is furnished to do so, subject to the following
 //  conditions:
-//  
+//
 //  The above copyright notice and this permission notice shall be
 //  included in all copies or substantial portions of the Software.
-//  
+//
 //  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
 //  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
 //  OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -26,24 +26,21 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import <Foundation/NSObject.h>
+#import "PKFriend.h"
 
-@interface PKUser : NSObject
+@implementation PKFriend
+
+@synthesize name;
+
+- (PKFriend *)initWithDictionary:(NSDictionary *)dictionary
 {
-    @private
-    NSString *user_id;
-    NSString *user_name;
-    NSString *access_token;
-    NSString *api_key;
-    NSString *api_secret;
+    self = [super init];
+    
+    if (self) {
+        self.name = [dictionary valueForKey:@"name"];
+    }
+    
+    return self;
 }
-
-@property (retain) NSString * user_id;
-@property (retain) NSString * user_name;
-@property (retain) NSString * access_token;
-@property (retain) NSString * api_key;
-@property (retain) NSString * api_secret;
-
-- (PKUser *) initWithDict: (NSDictionary *) dict;
 
 @end

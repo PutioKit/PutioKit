@@ -26,15 +26,13 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-/*
-    PKManager provides a singleton for information management at single point.
-*/
+#import <Foundation/NSObject.h>
+#import "PKAccount.h"
+
 @interface PKManager : NSObject
- 
-/*
-    Returns the shared instance of manager.
-    @return sharedManager
-*/
+
+@property (strong, nonatomic) PKAccount *account;
+
 + (PKManager *)sharedManager;
 
 @end

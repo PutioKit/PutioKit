@@ -1,5 +1,5 @@
 //
-//  PutioKit.m
+//  PKUser.m
 //  PutioKit
 //
 //  Copyright (c) 2012 Ahmet AYGÜN
@@ -12,10 +12,10 @@
 //  copies of the Software, and to permit persons to whom the
 //  Software is furnished to do so, subject to the following
 //  conditions:
-//
+//  
 //  The above copyright notice and this permission notice shall be
 //  included in all copies or substantial portions of the Software.
-//
+//  
 //  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
 //  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
 //  OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -26,8 +26,36 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import "PutioKit.h"
+#import "PKAccount.h"
 
-@implementation PutioKit
+@implementation PKAccount
+
+@synthesize username;
+@synthesize mail;
+@synthesize diskAvailable;
+@synthesize diskUsed;
+@synthesize diskSize;
+
+- (PKAccount *)initWithDictionary:(NSDictionary *)dictionary
+{
+    self = [super init];
+    
+    if (self) {
+        self.username = [dictionary valueForKey:@"username"];
+        self.mail = [dictionary valueForKey:@"mail"];
+        self.diskAvailable = [[[dictionary valueForKey:@"disk"] valueForKey:@"avail"] integerValue];
+        self.diskUsed = [[[dictionary valueForKey:@"disk"] valueForKey:@"used"] integerValue];
+        self.diskSize = [[[dictionary valueForKey:@"disk"] valueForKey:@"size"] integerValue];
+        
+        @try {
+            self.settings = [[PKAccountSettings alloc] initWithDictionary:[dictionary valueForKey:@"settings"]];
+        }
+        @catch (NSException *exception) {
+            NSLog(@"main: Caught %@: %@", [exception name], [exception reason]);
+        }
+    }
+    
+    return self;
+}
 
 @end

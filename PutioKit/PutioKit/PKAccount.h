@@ -1,5 +1,5 @@
 //
-//  PKItem.m
+//  PKUser.h
 //  PutioKit
 //
 //  Copyright (c) 2012 Ahmet AYGÜN
@@ -26,39 +26,35 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import "PKItem.h"
+#import <Foundation/NSObject.h>
+#import "PKAccountSettings.h"
 
-@implementation PKItem
+@interface PKAccount : NSObject
 
-@synthesize item_id;
-@synthesize name;
-@synthesize type;
-@synthesize size;
-@synthesize is_dir;
-@synthesize parent_id;
-@synthesize screenshot_url;
-@synthesize thumb_url;
-@synthesize file_icon_url;
-@synthesize download_url;
+/** Username as explained by its name. */
+@property (strong, nonatomic) NSString *username;
 
-- (PKItem *) initWithDict: (NSDictionary *) dict
-{
-    self = [super init];
-    
-    if (self) {
-        self.item_id = [dict valueForKey:@"id"];
-        self.name = [dict valueForKey:@"name"];
-        self.type = [dict valueForKey:@"type"];
-        self.size = [dict valueForKey:@"size"];
-        self.is_dir = [dict valueForKey:@"is_dir"];
-        self.parent_id = [dict valueForKey:@"parent_id"];
-        self.screenshot_url = [dict valueForKey:@"screenshot_url"];
-        self.thumb_url = [dict valueForKey:@"thumb_url"];
-        self.file_icon_url = [dict valueForKey:@"file_icon_url"];
-        self.download_url = [dict valueForKey:@"download_url"];
-    }
-    
-    return self;
-}
+/** Email address of user. */
+@property (strong, nonatomic) NSString *mail;
+
+/** Available disk size in bytes. */
+@property (nonatomic) NSUInteger diskAvailable;
+
+/** Used disk size in bytes. */
+@property (nonatomic) NSUInteger diskUsed;
+
+/** Disk size of user's paid plan. */
+@property (nonatomic) NSUInteger diskSize;
+
+/** PKAccountSettings instance that holds user's settings. */
+@property (strong, nonatomic) PKAccountSettings *settings;
+
+/**
+ Initializes an PKAccount object with given dictionary, returned from API, and returns the instance.
+ @param dictionary A NSDictionary object contains data obtained from API.
+ @return PKAccount
+ @warning *Important:* Needs better error handling. Identification of exception must done and should act properly.
+ */
+- (PKAccount *)initWithDictionary:(NSDictionary *)dictionary;
 
 @end
