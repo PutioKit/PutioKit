@@ -31,8 +31,13 @@
 
 @interface PKManager : NSObject
 
+/** PKAccount instance that holds current user's account. */
 @property (strong, nonatomic) PKAccount *account;
 
+/**
+ Returns the shared instance of manager.
+ @return sharedManager
+ */
 + (PKManager *)sharedManager;
 
 @end

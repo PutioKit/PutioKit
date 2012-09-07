@@ -28,9 +28,6 @@
 
 #import "PKManager.h"
 
-/*
- PKManager provides a singleton for information management at single point.
- */
 @implementation PKManager
 
 @synthesize account;
@@ -43,10 +40,6 @@ static PKManager *sharedManager = nil;
     }
 }
 
-/*
- Returns the shared instance of manager.
- @return sharedManager
- */
 + (PKManager *)sharedManager {
     return sharedManager;
 }
