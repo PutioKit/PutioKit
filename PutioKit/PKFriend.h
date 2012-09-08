@@ -28,11 +28,22 @@
 
 #import <Foundation/NSObject.h>
 
+/**
+ This class provides a NSObject subclass in type of PKFriend.
+ */
 @interface PKFriend : NSObject
 
+/**---------------------------------------------------------------------------------------
+ * @name Properties
+ *  ---------------------------------------------------------------------------------------
+ */
 /** Username of friend. */
 @property (strong, nonatomic) NSString *name;
 
+/**---------------------------------------------------------------------------------------
+ * @name Instance methods
+ *  ---------------------------------------------------------------------------------------
+ */
 /**
  Initializes an PKFriend object with given dictionary, returned from API, and returns the instance.
  @param dictionary A NSDictionary object contains data obtained from API.

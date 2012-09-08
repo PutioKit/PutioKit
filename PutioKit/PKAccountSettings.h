@@ -28,8 +28,15 @@
 
 #import <Foundation/NSObject.h>
 
+/**
+ This class provides a NSObject subclass in type of PKAccountSettings.
+ */
 @interface PKAccountSettings : NSObject
 
+/**---------------------------------------------------------------------------------------
+ * @name Properties
+ *  ---------------------------------------------------------------------------------------
+ */
 /** ID of folder that downloaded files put in by default. */
 @property (nonatomic) NSNumber *default_download_folder;
 
@@ -42,6 +49,10 @@
 /** Boolean value that defines extraction of downloaded files is enabled by default or not. */
 @property (nonatomic) NSNumber *extraction_default;
 
+/**---------------------------------------------------------------------------------------
+ * @name Instance methods
+ *  ---------------------------------------------------------------------------------------
+ */
 /**
  Initializes an PKAccountSettings object with given dictionary, returned from API, and returns the instance.
  @param dictionary A NSDictionary object contains data obtained from API.

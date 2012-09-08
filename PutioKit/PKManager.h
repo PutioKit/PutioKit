@@ -34,6 +34,10 @@
  */
 @interface PKManager : NSObject
 
+/**---------------------------------------------------------------------------------------
+ * @name Properties
+ *  ---------------------------------------------------------------------------------------
+ */
 /** PKAccount instance that holds current user's account. */
 @property (strong, nonatomic) PKAccount *account;
 
@@ -43,6 +47,10 @@
 /** Mutable array that holds pending friend requests of current user. */
 @property (strong, nonatomic) NSMutableArray *friendsPending;
 
+/**---------------------------------------------------------------------------------------
+ * @name Instance methods
+ *  ---------------------------------------------------------------------------------------
+ */
 /**
  Returns the shared instance of manager.
  @return sharedManager
