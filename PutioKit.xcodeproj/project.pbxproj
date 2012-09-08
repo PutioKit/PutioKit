@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6039D03C15FBC8EA00ACA5B4 /* PKTransfer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6039D03915FBC8EA00ACA5B4 /* PKTransfer.m */; };
+		6039D03D15FBC8EA00ACA5B4 /* PKTransfer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6039D03915FBC8EA00ACA5B4 /* PKTransfer.m */; };
 		60A7BFD115FA82A700FEB45E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60A7BFD015FA82A700FEB45E /* Foundation.framework */; };
 		60A7BFD615FA82A700FEB45E /* PutioKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 60A7BFD515FA82A700FEB45E /* PutioKit.h */; };
 		60A7BFE015FA82A700FEB45E /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60A7BFDF15FA82A700FEB45E /* SenTestingKit.framework */; };
@@ -49,6 +51,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6039D03815FBC8EA00ACA5B4 /* PKTransfer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = PKTransfer.h; sourceTree = "<group>"; };
+		6039D03915FBC8EA00ACA5B4 /* PKTransfer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKTransfer.m; sourceTree = "<group>"; };
 		60A7BFCD15FA82A700FEB45E /* libPutioKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPutioKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		60A7BFD015FA82A700FEB45E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		60A7BFD415FA82A700FEB45E /* PutioKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PutioKit-Prefix.pch"; sourceTree = "<group>"; };
@@ -128,6 +132,8 @@
 				60A7BFD515FA82A700FEB45E /* PutioKit.h */,
 				60A7BFFA15FA82F600FEB45E /* PKManager.h */,
 				60A7BFFB15FA82F600FEB45E /* PKManager.m */,
+				6039D03815FBC8EA00ACA5B4 /* PKTransfer.h */,
+				6039D03915FBC8EA00ACA5B4 /* PKTransfer.m */,
 				60A7BFFE15FA82F600FEB45E /* PKAccount.h */,
 				60A7BFFF15FA82F600FEB45E /* PKAccount.m */,
 				60A7C00815FA8ACA00FEB45E /* PKAccountSettings.h */,
@@ -268,6 +274,7 @@
 				60A7C00615FA82F600FEB45E /* PKAccount.m in Sources */,
 				60A7C00A15FA8ACA00FEB45E /* PKAccountSettings.m in Sources */,
 				60A7C00E15FA941F00FEB45E /* PKFriend.m in Sources */,
+				6039D03C15FBC8EA00ACA5B4 /* PKTransfer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +287,7 @@
 				60A7C00715FA82F600FEB45E /* PKAccount.m in Sources */,
 				60A7C00B15FA8ACA00FEB45E /* PKAccountSettings.m in Sources */,
 				60A7C00F15FA941F00FEB45E /* PKFriend.m in Sources */,
+				6039D03D15FBC8EA00ACA5B4 /* PKTransfer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,6 +432,7 @@
 				60A7BFF415FA82A700FEB45E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		60A7BFF515FA82A700FEB45E /* Build configuration list for PBXNativeTarget "PutioKitTests" */ = {
 			isa = XCConfigurationList;
@@ -432,6 +441,7 @@
 				60A7BFF715FA82A700FEB45E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
