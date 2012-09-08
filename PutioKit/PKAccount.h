@@ -38,13 +38,13 @@
 @property (strong, nonatomic) NSString *mail;
 
 /** Available disk size in bytes. */
-@property (nonatomic) NSUInteger diskAvailable;
+@property (strong, nonatomic) NSNumber *diskAvailable;
 
 /** Used disk size in bytes. */
-@property (nonatomic) NSUInteger diskUsed;
+@property (strong, nonatomic) NSNumber *diskUsed;
 
-/** Disk size of user's paid plan. */
-@property (nonatomic) NSUInteger diskSize;
+/** Disk size of user's paid plan in bytes. */
+@property (strong, nonatomic) NSNumber *diskSize;
 
 /** PKAccountSettings instance that holds user's settings. */
 @property (strong, nonatomic) PKAccountSettings *settings;

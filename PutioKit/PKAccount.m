@@ -43,9 +43,9 @@
     if (self) {
         self.username = [dictionary valueForKey:@"username"];
         self.mail = [dictionary valueForKey:@"mail"];
-        self.diskAvailable = [[[dictionary valueForKey:@"disk"] valueForKey:@"avail"] integerValue];
-        self.diskUsed = [[[dictionary valueForKey:@"disk"] valueForKey:@"used"] integerValue];
-        self.diskSize = [[[dictionary valueForKey:@"disk"] valueForKey:@"size"] integerValue];
+        self.diskAvailable = [NSNumber numberWithLongLong:[[[dictionary valueForKey:@"disk"] valueForKey:@"avail"] longLongValue]];
+        self.diskUsed = [NSNumber numberWithLongLong:[[[dictionary valueForKey:@"disk"] valueForKey:@"used"] longLongValue]];
+        self.diskSize = [NSNumber numberWithLongLong:[[[dictionary valueForKey:@"disk"] valueForKey:@"size"] longLongValue]];
         
         @try {
             self.settings = [[PKAccountSettings alloc] initWithDictionary:[dictionary valueForKey:@"settings"]];
