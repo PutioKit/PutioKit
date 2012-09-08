@@ -29,10 +29,19 @@
 #import <Foundation/NSObject.h>
 #import "PKAccount.h"
 
+/**
+ This class provides a singleton to manage application wide data.
+ */
 @interface PKManager : NSObject
 
 /** PKAccount instance that holds current user's account. */
 @property (strong, nonatomic) PKAccount *account;
+
+/** Mutable array that holds friends of current user. */
+@property (strong, nonatomic) NSMutableArray *friends;
+
+/** Mutable array that holds pending friend requests of current user. */
+@property (strong, nonatomic) NSMutableArray *friendsPending;
 
 /**
  Returns the shared instance of manager.

@@ -31,8 +31,19 @@
 @implementation PKManager
 
 @synthesize account;
+@synthesize friends;
+@synthesize friendsPending;
 
 static PKManager *sharedManager = nil;
+
+- (id)init {
+    if (self = [super init]) {
+        account = nil;
+        friends = [[NSMutableArray alloc] init];
+        friendsPending = [[NSMutableArray alloc] init];
+    }
+    return self;
+}
 
 + (void)initialize {
     if (self == [PKManager class]) {
