@@ -1,6 +1,6 @@
 # PutioKit
 
-It's a simple library to use Put.io API in your iOS applications, written in Objective-C.
+Simple framework to use Put.io API in your iOS applications, written in Objective-C.
 
 ## Testing
 
