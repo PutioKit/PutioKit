@@ -31,16 +31,16 @@
 @interface PKAccountSettings : NSObject
 
 /** ID of folder that downloaded files put in by default. */
-@property (nonatomic) NSUInteger default_download_folder;
+@property (nonatomic) NSNumber *default_download_folder;
 
 /** Boolean value that defines user is invisible in sharing page. */
-@property (nonatomic) BOOL is_invisible;
+@property (nonatomic) NSNumber *is_invisible;
 
 /** Boolean value that defines "items shared with you" folder is visible or not. */
-@property (nonatomic) BOOL hide_items_shared;
+@property (nonatomic) NSNumber *hide_items_shared;
 
 /** Boolean value that defines extraction of downloaded files is enabled by default or not. */
-@property (nonatomic) BOOL extraction_default;
+@property (nonatomic) NSNumber *extraction_default;
 
 /**
  Initializes an PKAccountSettings object with given dictionary, returned from API, and returns the instance.
