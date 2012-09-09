@@ -27,6 +27,7 @@
 //
 
 #import "PKManager.h"
+#import "PKFile.h"
 #import "PKTransfer.h"
 #import "PKAccount.h"
 #import "PKAccountSettings.h"

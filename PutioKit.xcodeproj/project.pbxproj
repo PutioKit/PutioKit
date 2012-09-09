@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6028B7F915FD08DF002EA5A1 /* PKFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 6028B7F615FD08DF002EA5A1 /* PKFile.m */; };
+		6028B7FA15FD08DF002EA5A1 /* PKFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 6028B7F615FD08DF002EA5A1 /* PKFile.m */; };
 		6039D03C15FBC8EA00ACA5B4 /* PKTransfer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6039D03915FBC8EA00ACA5B4 /* PKTransfer.m */; };
 		6039D03D15FBC8EA00ACA5B4 /* PKTransfer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6039D03915FBC8EA00ACA5B4 /* PKTransfer.m */; };
 		60A7BFD115FA82A700FEB45E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60A7BFD015FA82A700FEB45E /* Foundation.framework */; };
@@ -51,6 +53,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6028B7F515FD08DF002EA5A1 /* PKFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = PKFile.h; sourceTree = "<group>"; };
+		6028B7F615FD08DF002EA5A1 /* PKFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKFile.m; sourceTree = "<group>"; };
 		6039D03815FBC8EA00ACA5B4 /* PKTransfer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = PKTransfer.h; sourceTree = "<group>"; };
 		6039D03915FBC8EA00ACA5B4 /* PKTransfer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKTransfer.m; sourceTree = "<group>"; };
 		60A7BFCD15FA82A700FEB45E /* libPutioKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPutioKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +136,8 @@
 				60A7BFD515FA82A700FEB45E /* PutioKit.h */,
 				60A7BFFA15FA82F600FEB45E /* PKManager.h */,
 				60A7BFFB15FA82F600FEB45E /* PKManager.m */,
+				6028B7F515FD08DF002EA5A1 /* PKFile.h */,
+				6028B7F615FD08DF002EA5A1 /* PKFile.m */,
 				6039D03815FBC8EA00ACA5B4 /* PKTransfer.h */,
 				6039D03915FBC8EA00ACA5B4 /* PKTransfer.m */,
 				60A7BFFE15FA82F600FEB45E /* PKAccount.h */,
@@ -275,6 +281,7 @@
 				60A7C00A15FA8ACA00FEB45E /* PKAccountSettings.m in Sources */,
 				60A7C00E15FA941F00FEB45E /* PKFriend.m in Sources */,
 				6039D03C15FBC8EA00ACA5B4 /* PKTransfer.m in Sources */,
+				6028B7F915FD08DF002EA5A1 /* PKFile.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +295,7 @@
 				60A7C00B15FA8ACA00FEB45E /* PKAccountSettings.m in Sources */,
 				60A7C00F15FA941F00FEB45E /* PKFriend.m in Sources */,
 				6039D03D15FBC8EA00ACA5B4 /* PKTransfer.m in Sources */,
+				6028B7FA15FD08DF002EA5A1 /* PKFile.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

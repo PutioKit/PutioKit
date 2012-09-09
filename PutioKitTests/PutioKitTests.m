@@ -40,6 +40,48 @@
     [super tearDown];
 }
 
+- (void)testPKFile
+{
+    PKFile *file = nil;
+    
+    NSMutableDictionary *fileDict = [[NSMutableDictionary alloc] init];
+    [fileDict setValue:[NSNumber numberWithBool:NO] forKey:@"is_shared"];
+    [fileDict setValue:@"A_video.avi" forKey:@"name"];
+    [fileDict setValue:@"http://put.io/screenshots/aFZlk2VjXlySh1ZiWWZlZZZfXWVbW2SKZWKTlWCIlFaHloltkJFgXw.jpg" forKey:@"screenshot"];
+    [fileDict setValue:@"2012-03-28T09:14:17" forKey:@"created_at"];
+    [fileDict setValue:[NSNumber numberWithInt:0] forKey:@"parent_id"];
+    [fileDict setValue:[NSNumber numberWithBool:NO] forKey:@"is_mp4_available"];
+    [fileDict setValue:@"video/x-msvideo" forKey:@"content_type"];
+    [fileDict setValue:@"http://put.io/thumbnails/aFZlk2VjXlySh1ZiWWZlZZZfXWVbW2SKZWKTlWCIlFaHloltkJFgXw.jpg" forKey:@"icon"];
+    [fileDict setValue:[NSNumber numberWithInt:12345] forKey:@"id"];
+    [fileDict setValue:[NSNumber numberWithLongLong:3204132] forKey:@"size"];
+
+    file = [[PKFile alloc] init];
+    STAssertNotNil(file, @"Could not create PKFile object with init method.");
+    STAssertNil(file.is_shared, @"transfer.is_shared must be nil when initialized with init method.");
+    STAssertNil(file.name, @"transfer.name must be nil when initialized with init method.");
+    STAssertNil(file.screenshot, @"transfer.screenshot must be nil when initialized with init method.");
+    STAssertNil(file.created_at, @"transfer.created_at must be nil when initialized with init method.");
+    STAssertNil(file.parent_id, @"transfer.parent_id must be nil when initialized with init method.");
+    STAssertNil(file.is_mp4_available, @"transfer.is_mp4_available must be nil when initialized with init method.");
+    STAssertNil(file.content_type, @"transfer.content_type must be nil when initialized with init method.");
+    STAssertNil(file.icon, @"transfer.icon must be nil when initialized with init method.");
+    STAssertNil(file.fid, @"transfer.fid must be nil when initialized with init method.");
+    STAssertNil(file.size, @"transfer.size must be nil when initialized with init method.");
+
+    file = [[PKFile alloc] initWithDictionary:fileDict];
+    STAssertNotNil(file, @"Could not create PKFile object with initWithDictionary method.");
+    STAssertEquals([file.is_shared boolValue], [[fileDict valueForKey:@"is_shared"] boolValue], @"file.is_shared and given is_shared not equals.");
+    STAssertEquals(file.name, [fileDict valueForKey:@"name"], @"file.name and given name not equals.");
+    STAssertEquals(file.screenshot, [fileDict valueForKey:@"screenshot"], @"file.screenshot and given screenshot not equals.");
+    STAssertEquals(file.created_at, [fileDict valueForKey:@"created_at"], @"file.created_at and given created_at not equals.");
+    STAssertEquals([file.parent_id intValue], [[fileDict valueForKey:@"parent_id"] intValue], @"file.parent_id and given parent_id not equals.");
+    STAssertEquals([file.is_mp4_available boolValue], [[fileDict valueForKey:@"is_mp4_available"] boolValue], @"file.is_mp4_available and given is_mp4_available not equals.");
+    STAssertEquals(file.content_type, [fileDict valueForKey:@"content_type"], @"file.content_type and given content_type not equals.");
+    STAssertEquals(file.icon, [fileDict valueForKey:@"icon"], @"file.icon and given icon not equals.");
+    STAssertEquals([file.fid intValue], [[fileDict valueForKey:@"id"] intValue], @"file.fid and given id not equals.");
+    STAssertEquals([file.size longLongValue], [[fileDict valueForKey:@"size"] longLongValue], @"file.size and given size not equals.");
+}
 - (void)testPKTransfer
 {
     PKTransfer *transfer = nil;
