@@ -1,0 +1,20 @@
+<?xml version="1.0" standalone="no"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:docset="http://developer.apple.com/rss/docset_extensions" xml:lang="en">
+    <id>http://ahmet.github.com/PutioKit/PutioKit.atom/20120909210045</id>
+    <title type="text">PutioKit Documentation</title>
+    <rights>Copyright © 2012 Ahmet AYGUN. All rights reserved.</rights>
+    <link rel="self" href="http://ahmet.github.com/PutioKit/PutioKit.atom"></link>
+    <docset:publisherName>Ahmet AYGUN</docset:publisherName>
+    <docset:publisherID>com.ahmetaygun.documentation</docset:publisherID>
+    <updated>2012-09-09T21:00:45+03:00</updated>
+    <entry>
+        <id>tag:ahmet.github.com,2012-09-09:com.ahmetaygun.PutioKit/0.0.1</id>
+        <title type="text">PutioKit Documentation</title>
+        <updated>2012-09-09T21:00:45+03:00</updated>
+        <content type="text">PutioKit Documentation (v0.0.1)</content>
+        <link rel="enclosure" type="application/octet-stream" href="http://ahmet.github.com/PutioKit/com.ahmetaygun.PutioKit-0.0.1.xar" length="60710"></link>
+        <docset:identifier>com.ahmetaygun.PutioKit</docset:identifier>
+        <docset:version>0.0.1</docset:version>
+        <docset:minimumXcodeVersion>3.0.0</docset:minimumXcodeVersion>
+    </entry>
+</feed>
