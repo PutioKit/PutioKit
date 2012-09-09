@@ -25,6 +25,10 @@ Be sure you have the docset selected in the organizer to see results for PutioKi
 
 Unit tests are included in project. You can run tests with XCode.
 
+## ARC Compatibility
+
+PutioKit is compatible with ARC enabled projects by default.
+
 ## Contributing
 
 Want to contribute? It's good to hear.
