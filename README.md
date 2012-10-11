@@ -1,5 +1,7 @@
 # PutioKit
 
+![Project status](http://stillmaintained.com/ahmet/PutioKit.png)
+
 Simple framework to use Put.io API in your iOS applications, written in Objective-C. Feel free to fork this repo and help me make it better.
 
 If you're using this framework in your project, I'd like to know! [Send me an email](mailto:me@ahmetaygun.net).
