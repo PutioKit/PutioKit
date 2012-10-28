@@ -4,11 +4,9 @@
 
 Simple framework to use Put.io API in your iOS applications, written in Objective-C. Feel free to fork this repo and help me make it better.
 
-If you're using this framework in your project, I'd like to know! [Send me an email](mailto:me@ahmetaygun.net).
-
 ## Documentation
 
-**Read the [PutioKit Documentation](http://ahmet.github.com/PutioKit/) online.**
+**Read the [PutioKit Documentation](http://putiokit.github.com/PutioKit/) online.**
 
 Install the documentation into Xcode with the following steps:
 
@@ -17,7 +15,7 @@ Install the documentation into Xcode with the following steps:
 3. Choose the Documentation tab
 4. Click the plus button in the bottom right and enter the following URL:
     
-        http://ahmet.github.com/PutioKit/PutioKit.atom
+        http://putiokit.github.com/PutioKit/PutioKit.atom
 
 5. Click Install next the new row reading "PutioKit Documentation". (If you don't see it and didn't get an error, try restarting Xcode.)
 
@@ -44,6 +42,6 @@ Want to contribute? It's good to hear.
 
 ## Links
 
-* [Source Code](http://github.com/ahmet/PutioKit)
-* [Documentation](http://ahmet.github.com/PutioKit/)
-* [Issues](https://github.com/ahmet/PutioKit/issues)
+* [Source Code](http://github.com/PutioKit/PutioKit)
+* [Documentation](http://putiokit.github.com/PutioKit/)
+* [Issues](https://github.com/PutioKit/PutioKit/issues)
