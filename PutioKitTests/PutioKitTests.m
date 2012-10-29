@@ -58,12 +58,12 @@
 
     file = [[PKFile alloc] init];
     STAssertNotNil(file, @"Could not create PKFile object with init method.");
-    STAssertNil(file.is_shared, @"transfer.is_shared must be nil when initialized with init method.");
+    STAssertNil(file.isShared, @"transfer.is_shared must be nil when initialized with init method.");
     STAssertNil(file.name, @"transfer.name must be nil when initialized with init method.");
     STAssertNil(file.screenshot, @"transfer.screenshot must be nil when initialized with init method.");
-    STAssertNil(file.created_at, @"transfer.created_at must be nil when initialized with init method.");
-    STAssertNil(file.parent_id, @"transfer.parent_id must be nil when initialized with init method.");
-    STAssertNil(file.is_mp4_available, @"transfer.is_mp4_available must be nil when initialized with init method.");
+    STAssertNil(file.createdAt, @"transfer.created_at must be nil when initialized with init method.");
+    STAssertNil(file.parentID, @"transfer.parent_id must be nil when initialized with init method.");
+    STAssertNil(file.isMP4Available, @"transfer.is_mp4_available must be nil when initialized with init method.");
     STAssertNil(file.content_type, @"transfer.content_type must be nil when initialized with init method.");
     STAssertNil(file.icon, @"transfer.icon must be nil when initialized with init method.");
     STAssertNil(file.fid, @"transfer.fid must be nil when initialized with init method.");
@@ -71,12 +71,12 @@
 
     file = [[PKFile alloc] initWithDictionary:fileDict];
     STAssertNotNil(file, @"Could not create PKFile object with initWithDictionary method.");
-    STAssertEquals([file.is_shared boolValue], [[fileDict valueForKey:@"is_shared"] boolValue], @"file.is_shared and given is_shared not equals.");
+    STAssertEquals([file.isShared boolValue], [[fileDict valueForKey:@"is_shared"] boolValue], @"file.is_shared and given is_shared not equals.");
     STAssertEquals(file.name, [fileDict valueForKey:@"name"], @"file.name and given name not equals.");
     STAssertEquals(file.screenshot, [fileDict valueForKey:@"screenshot"], @"file.screenshot and given screenshot not equals.");
-    STAssertEquals(file.created_at, [fileDict valueForKey:@"created_at"], @"file.created_at and given created_at not equals.");
-    STAssertEquals([file.parent_id intValue], [[fileDict valueForKey:@"parent_id"] intValue], @"file.parent_id and given parent_id not equals.");
-    STAssertEquals([file.is_mp4_available boolValue], [[fileDict valueForKey:@"is_mp4_available"] boolValue], @"file.is_mp4_available and given is_mp4_available not equals.");
+    STAssertEquals(file.createdAt, [fileDict valueForKey:@"created_at"], @"file.created_at and given created_at not equals.");
+    STAssertEquals([file.parentID intValue], [[fileDict valueForKey:@"parent_id"] intValue], @"file.parent_id and given parent_id not equals.");
+    STAssertEquals([file.isMP4Available boolValue], [[fileDict valueForKey:@"is_mp4_available"] boolValue], @"file.is_mp4_available and given is_mp4_available not equals.");
     STAssertEquals(file.content_type, [fileDict valueForKey:@"content_type"], @"file.content_type and given content_type not equals.");
     STAssertEquals(file.icon, [fileDict valueForKey:@"icon"], @"file.icon and given icon not equals.");
     STAssertEquals([file.fid intValue], [[fileDict valueForKey:@"id"] intValue], @"file.fid and given id not equals.");

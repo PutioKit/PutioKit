@@ -30,35 +30,25 @@
 
 @implementation PKFile
 
-@synthesize is_shared;
+@synthesize isShared;
 @synthesize name;
 @synthesize screenshot;
-@synthesize created_at;
-@synthesize parent_id;
-@synthesize is_mp4_available;
-@synthesize content_type;
+@synthesize createdAt;
+@synthesize parentID;
+@synthesize isMP4Available;
+@synthesize contentType;
 @synthesize icon;
-@synthesize fid;
+@synthesize id;
 @synthesize size;
 
-- (PKFile *)initWithDictionary:(NSDictionary *)dictionary
-{
-    self = [super init];
-    
-    if (self) {
-        self.is_shared = [NSNumber numberWithBool:[[dictionary valueForKey:@"is_shared"] boolValue]];
-        self.name = [dictionary valueForKey:@"name"];
-        self.screenshot = [dictionary valueForKey:@"screenshot"];
-        self.created_at = [dictionary valueForKey:@"created_at"];
-        self.parent_id = [NSNumber numberWithInt:[[dictionary valueForKey:@"parent_id"] intValue]];
-        self.is_mp4_available = [NSNumber numberWithBool:[[dictionary valueForKey:@"is_mp4_available"] boolValue]];
-        self.content_type = [dictionary valueForKey:@"content_type"];
-        self.icon = [dictionary valueForKey:@"icon"];
-        self.fid = [NSNumber numberWithInt:[[dictionary valueForKey:@"id"] intValue]];
-        self.size = [NSNumber numberWithLongLong:[[dictionary valueForKey:@"size"] longLongValue]];
-    }
-    
-    return self;
-}
 
+
++ (id)objectWithDictionary:(NSDictionary *)dictionary {
+    PKFile *object = [super objectWithDictionary:dictionary];
+    if (object) {
+        object.isMP4Available = @( [dictionary[@"is_mp4_available"] boolValue] );
+        object.parentID = @( [dictionary[@"parend_id"] boolValue] );
+    }
+    return object;
+}
 @end

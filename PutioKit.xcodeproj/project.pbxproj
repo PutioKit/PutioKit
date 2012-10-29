@@ -11,6 +11,7 @@
 		6028B7FA15FD08DF002EA5A1 /* PKFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 6028B7F615FD08DF002EA5A1 /* PKFile.m */; };
 		6039D03C15FBC8EA00ACA5B4 /* PKTransfer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6039D03915FBC8EA00ACA5B4 /* PKTransfer.m */; };
 		6039D03D15FBC8EA00ACA5B4 /* PKTransfer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6039D03915FBC8EA00ACA5B4 /* PKTransfer.m */; };
+		609E79A2163E322A00F85EC4 /* PKObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E79A1163E322A00F85EC4 /* PKObject.m */; };
 		60A7BFD115FA82A700FEB45E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60A7BFD015FA82A700FEB45E /* Foundation.framework */; };
 		60A7BFD615FA82A700FEB45E /* PutioKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 60A7BFD515FA82A700FEB45E /* PutioKit.h */; };
 		60A7BFE015FA82A700FEB45E /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60A7BFDF15FA82A700FEB45E /* SenTestingKit.framework */; };
@@ -57,6 +58,8 @@
 		6028B7F615FD08DF002EA5A1 /* PKFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKFile.m; sourceTree = "<group>"; };
 		6039D03815FBC8EA00ACA5B4 /* PKTransfer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = PKTransfer.h; sourceTree = "<group>"; };
 		6039D03915FBC8EA00ACA5B4 /* PKTransfer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKTransfer.m; sourceTree = "<group>"; };
+		609E79A0163E322A00F85EC4 /* PKObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKObject.h; sourceTree = "<group>"; };
+		609E79A1163E322A00F85EC4 /* PKObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKObject.m; sourceTree = "<group>"; };
 		60A7BFCD15FA82A700FEB45E /* libPutioKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPutioKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		60A7BFD015FA82A700FEB45E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		60A7BFD415FA82A700FEB45E /* PutioKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PutioKit-Prefix.pch"; sourceTree = "<group>"; };
@@ -101,6 +104,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		609E79A4163E323200F85EC4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				609E79A0163E322A00F85EC4 /* PKObject.h */,
+				609E79A1163E322A00F85EC4 /* PKObject.m */,
+				6028B7F515FD08DF002EA5A1 /* PKFile.h */,
+				6028B7F615FD08DF002EA5A1 /* PKFile.m */,
+				6039D03815FBC8EA00ACA5B4 /* PKTransfer.h */,
+				6039D03915FBC8EA00ACA5B4 /* PKTransfer.m */,
+				60A7BFFE15FA82F600FEB45E /* PKAccount.h */,
+				60A7BFFF15FA82F600FEB45E /* PKAccount.m */,
+				60A7C00815FA8ACA00FEB45E /* PKAccountSettings.h */,
+				60A7C00915FA8ACA00FEB45E /* PKAccountSettings.m */,
+				60A7C00C15FA941F00FEB45E /* PKFriend.h */,
+				60A7C00D15FA941F00FEB45E /* PKFriend.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		60A7BFC215FA82A700FEB45E = {
 			isa = PBXGroup;
 			children = (
@@ -136,16 +158,7 @@
 				60A7BFD515FA82A700FEB45E /* PutioKit.h */,
 				60A7BFFA15FA82F600FEB45E /* PKManager.h */,
 				60A7BFFB15FA82F600FEB45E /* PKManager.m */,
-				6028B7F515FD08DF002EA5A1 /* PKFile.h */,
-				6028B7F615FD08DF002EA5A1 /* PKFile.m */,
-				6039D03815FBC8EA00ACA5B4 /* PKTransfer.h */,
-				6039D03915FBC8EA00ACA5B4 /* PKTransfer.m */,
-				60A7BFFE15FA82F600FEB45E /* PKAccount.h */,
-				60A7BFFF15FA82F600FEB45E /* PKAccount.m */,
-				60A7C00815FA8ACA00FEB45E /* PKAccountSettings.h */,
-				60A7C00915FA8ACA00FEB45E /* PKAccountSettings.m */,
-				60A7C00C15FA941F00FEB45E /* PKFriend.h */,
-				60A7C00D15FA941F00FEB45E /* PKFriend.m */,
+				609E79A4163E323200F85EC4 /* Models */,
 				60A7BFD315FA82A700FEB45E /* Supporting Files */,
 			);
 			path = PutioKit;
@@ -223,8 +236,9 @@
 		60A7BFC415FA82A700FEB45E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = PK;
 				LastUpgradeCheck = 0440;
-				ORGANIZATIONNAME = "Ahmet AYGÜN";
+				ORGANIZATIONNAME = PutIOKit;
 			};
 			buildConfigurationList = 60A7BFC715FA82A700FEB45E /* Build configuration list for PBXProject "PutioKit" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -282,6 +296,7 @@
 				60A7C00E15FA941F00FEB45E /* PKFriend.m in Sources */,
 				6039D03C15FBC8EA00ACA5B4 /* PKTransfer.m in Sources */,
 				6028B7F915FD08DF002EA5A1 /* PKFile.m in Sources */,
+				609E79A2163E322A00F85EC4 /* PKObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

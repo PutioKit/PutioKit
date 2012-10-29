@@ -40,10 +40,10 @@
     self = [super init];
     
     if (self) {
-        self.default_download_folder = [NSNumber numberWithInteger:[[dictionary valueForKey:@"default_download_folder"] integerValue]];
-        self.is_invisible = [NSNumber numberWithBool:[[dictionary valueForKey:@"is_invisible"] boolValue]];
-        self.hide_items_shared = [NSNumber numberWithBool:[[dictionary valueForKey:@"hide_items_shared"] boolValue]];
-        self.extraction_default = [NSNumber numberWithBool:[[dictionary valueForKey:@"extraction_default"] boolValue]];
+        self.default_download_folder = @([[dictionary valueForKey:@"default_download_folder"] integerValue]);
+        self.is_invisible = @([[dictionary valueForKey:@"is_invisible"] boolValue]);
+        self.hide_items_shared = @([[dictionary valueForKey:@"hide_items_shared"] boolValue]);
+        self.extraction_default = @([[dictionary valueForKey:@"extraction_default"] boolValue]);
     }
     
     return self;
