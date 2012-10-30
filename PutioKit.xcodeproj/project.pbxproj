@@ -1,1144 +1,519 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>2391DF3671F44BCBAC4CBDAD</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Pods.xcconfig</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>25070C1AE9124CAAA0308320</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>libPods.a</string>
-			<key>path</key>
-			<string>libPods.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>6028B7F515FD08DF002EA5A1</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.objj.h</string>
-			<key>path</key>
-			<string>PKFile.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6028B7F615FD08DF002EA5A1</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>PKFile.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6028B7F915FD08DF002EA5A1</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6028B7F615FD08DF002EA5A1</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>6028B7FA15FD08DF002EA5A1</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6028B7F615FD08DF002EA5A1</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>6039D03815FBC8EA00ACA5B4</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.objj.h</string>
-			<key>path</key>
-			<string>PKTransfer.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6039D03915FBC8EA00ACA5B4</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>PKTransfer.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6039D03C15FBC8EA00ACA5B4</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6039D03915FBC8EA00ACA5B4</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>6039D03D15FBC8EA00ACA5B4</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6039D03915FBC8EA00ACA5B4</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>609E79A0163E322A00F85EC4</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>PKObject.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>609E79A1163E322A00F85EC4</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>PKObject.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>609E79A2163E322A00F85EC4</key>
-		<dict>
-			<key>fileRef</key>
-			<string>609E79A1163E322A00F85EC4</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>609E79A4163E323200F85EC4</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>609E79A0163E322A00F85EC4</string>
-				<string>609E79A1163E322A00F85EC4</string>
-				<string>6028B7F515FD08DF002EA5A1</string>
-				<string>6028B7F615FD08DF002EA5A1</string>
-				<string>6039D03815FBC8EA00ACA5B4</string>
-				<string>6039D03915FBC8EA00ACA5B4</string>
-				<string>60A7BFFE15FA82F600FEB45E</string>
-				<string>60A7BFFF15FA82F600FEB45E</string>
-				<string>60A7C00815FA8ACA00FEB45E</string>
-				<string>60A7C00915FA8ACA00FEB45E</string>
-				<string>60A7C00C15FA941F00FEB45E</string>
-				<string>60A7C00D15FA941F00FEB45E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Models</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>60A7BFC215FA82A700FEB45E</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>60A7BFD215FA82A700FEB45E</string>
-				<string>60A7BFE715FA82A700FEB45E</string>
-				<string>60A7BFCF15FA82A700FEB45E</string>
-				<string>60A7BFCE15FA82A700FEB45E</string>
-				<string>2391DF3671F44BCBAC4CBDAD</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>60A7BFC415FA82A700FEB45E</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>CLASSPREFIX</key>
-				<string>PK</string>
-				<key>LastUpgradeCheck</key>
-				<string>0440</string>
-				<key>ORGANIZATIONNAME</key>
-				<string>PutIOKit</string>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>60A7BFC715FA82A700FEB45E</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-			</array>
-			<key>mainGroup</key>
-			<string>60A7BFC215FA82A700FEB45E</string>
-			<key>productRefGroup</key>
-			<string>60A7BFCE15FA82A700FEB45E</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>60A7BFCC15FA82A700FEB45E</string>
-				<string>60A7BFDD15FA82A700FEB45E</string>
-			</array>
-		</dict>
-		<key>60A7BFC715FA82A700FEB45E</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>60A7BFF015FA82A700FEB45E</string>
-				<string>60A7BFF115FA82A700FEB45E</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>60A7BFC915FA82A700FEB45E</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>60A7C00215FA82F600FEB45E</string>
-				<string>60A7C00615FA82F600FEB45E</string>
-				<string>60A7C00A15FA8ACA00FEB45E</string>
-				<string>60A7C00E15FA941F00FEB45E</string>
-				<string>6039D03C15FBC8EA00ACA5B4</string>
-				<string>6028B7F915FD08DF002EA5A1</string>
-				<string>609E79A2163E322A00F85EC4</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>60A7BFCA15FA82A700FEB45E</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>60A7BFD115FA82A700FEB45E</string>
-				<string>85F9AFE6360A4E2CB1049AF6</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>60A7BFCB15FA82A700FEB45E</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>dstPath</key>
-			<string>include/${PRODUCT_NAME}</string>
-			<key>dstSubfolderSpec</key>
-			<string>16</string>
-			<key>files</key>
-			<array>
-				<string>60A7BFD615FA82A700FEB45E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXCopyFilesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>60A7BFCC15FA82A700FEB45E</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>60A7BFF215FA82A700FEB45E</string>
-			<key>buildPhases</key>
-			<array>
-				<string>60A7BFC915FA82A700FEB45E</string>
-				<string>60A7BFCA15FA82A700FEB45E</string>
-				<string>60A7BFCB15FA82A700FEB45E</string>
-				<string>6804E653AFB44D35860808DA</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>PutioKit</string>
-			<key>productName</key>
-			<string>PutioKit</string>
-			<key>productReference</key>
-			<string>60A7BFCD15FA82A700FEB45E</string>
-			<key>productType</key>
-			<string>com.apple.product-type.library.static</string>
-		</dict>
-		<key>60A7BFCD15FA82A700FEB45E</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>libPutioKit.a</string>
-			<key>path</key>
-			<string>libPutioKit.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>60A7BFCE15FA82A700FEB45E</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>60A7BFCD15FA82A700FEB45E</string>
-				<string>60A7BFDE15FA82A700FEB45E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>60A7BFCF15FA82A700FEB45E</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>60A7BFD015FA82A700FEB45E</string>
-				<string>60A7BFDF15FA82A700FEB45E</string>
-				<string>60A7BFE115FA82A700FEB45E</string>
-				<string>25070C1AE9124CAAA0308320</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>60A7BFD015FA82A700FEB45E</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>Foundation.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/Foundation.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>60A7BFD115FA82A700FEB45E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>60A7BFD015FA82A700FEB45E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>60A7BFD215FA82A700FEB45E</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>60A7BFD515FA82A700FEB45E</string>
-				<string>60A7BFFA15FA82F600FEB45E</string>
-				<string>60A7BFFB15FA82F600FEB45E</string>
-				<string>609E79A4163E323200F85EC4</string>
-				<string>60A7BFD315FA82A700FEB45E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>PutioKit</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>60A7BFD315FA82A700FEB45E</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>60A7BFD415FA82A700FEB45E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>60A7BFD415FA82A700FEB45E</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>PutioKit-Prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>60A7BFD515FA82A700FEB45E</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>PutioKit.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>60A7BFD615FA82A700FEB45E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>60A7BFD515FA82A700FEB45E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>60A7BFD915FA82A700FEB45E</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>60A7BFEF15FA82A700FEB45E</string>
-				<string>60A7C00315FA82F600FEB45E</string>
-				<string>60A7C00715FA82F600FEB45E</string>
-				<string>60A7C00B15FA8ACA00FEB45E</string>
-				<string>60A7C00F15FA941F00FEB45E</string>
-				<string>6039D03D15FBC8EA00ACA5B4</string>
-				<string>6028B7FA15FD08DF002EA5A1</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>60A7BFDA15FA82A700FEB45E</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>60A7BFE015FA82A700FEB45E</string>
-				<string>60A7BFE215FA82A700FEB45E</string>
-				<string>60A7BFE315FA82A700FEB45E</string>
-				<string>60A7BFE615FA82A700FEB45E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>60A7BFDB15FA82A700FEB45E</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>60A7BFEC15FA82A700FEB45E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>60A7BFDC15FA82A700FEB45E</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string># Run the unit tests in this test bundle.
-"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests"
-</string>
-		</dict>
-		<key>60A7BFDD15FA82A700FEB45E</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>60A7BFF515FA82A700FEB45E</string>
-			<key>buildPhases</key>
-			<array>
-				<string>60A7BFD915FA82A700FEB45E</string>
-				<string>60A7BFDA15FA82A700FEB45E</string>
-				<string>60A7BFDB15FA82A700FEB45E</string>
-				<string>60A7BFDC15FA82A700FEB45E</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>60A7BFE515FA82A700FEB45E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>PutioKitTests</string>
-			<key>productName</key>
-			<string>PutioKitTests</string>
-			<key>productReference</key>
-			<string>60A7BFDE15FA82A700FEB45E</string>
-			<key>productType</key>
-			<string>com.apple.product-type.bundle</string>
-		</dict>
-		<key>60A7BFDE15FA82A700FEB45E</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.cfbundle</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>PutioKitTests.octest</string>
-			<key>path</key>
-			<string>PutioKitTests.octest</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>60A7BFDF15FA82A700FEB45E</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>SenTestingKit.framework</string>
-			<key>path</key>
-			<string>Library/Frameworks/SenTestingKit.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>60A7BFE015FA82A700FEB45E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>60A7BFDF15FA82A700FEB45E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>60A7BFE115FA82A700FEB45E</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>UIKit.framework</string>
-			<key>path</key>
-			<string>Library/Frameworks/UIKit.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>60A7BFE215FA82A700FEB45E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>60A7BFE115FA82A700FEB45E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>60A7BFE315FA82A700FEB45E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>60A7BFD015FA82A700FEB45E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>60A7BFE415FA82A700FEB45E</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>60A7BFC415FA82A700FEB45E</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>60A7BFCC15FA82A700FEB45E</string>
-			<key>remoteInfo</key>
-			<string>PutioKit</string>
-		</dict>
-		<key>60A7BFE515FA82A700FEB45E</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>60A7BFCC15FA82A700FEB45E</string>
-			<key>targetProxy</key>
-			<string>60A7BFE415FA82A700FEB45E</string>
-		</dict>
-		<key>60A7BFE615FA82A700FEB45E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>60A7BFCD15FA82A700FEB45E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>60A7BFE715FA82A700FEB45E</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>60A7BFED15FA82A700FEB45E</string>
-				<string>60A7BFEE15FA82A700FEB45E</string>
-				<string>60A7BFE815FA82A700FEB45E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>PutioKitTests</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>60A7BFE815FA82A700FEB45E</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>60A7BFE915FA82A700FEB45E</string>
-				<string>60A7BFEA15FA82A700FEB45E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>60A7BFE915FA82A700FEB45E</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>PutioKitTests-Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>60A7BFEA15FA82A700FEB45E</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>60A7BFEB15FA82A700FEB45E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>60A7BFEB15FA82A700FEB45E</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.strings</string>
-			<key>name</key>
-			<string>en</string>
-			<key>path</key>
-			<string>en.lproj/InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>60A7BFEC15FA82A700FEB45E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>60A7BFEA15FA82A700FEB45E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>60A7BFED15FA82A700FEB45E</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>PutioKitTests.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>60A7BFEE15FA82A700FEB45E</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>PutioKitTests.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>60A7BFEF15FA82A700FEB45E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>60A7BFEE15FA82A700FEB45E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>60A7BFF015FA82A700FEB45E</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>ARCHS</key>
-				<string>$(ARCHS_STANDARD_32_BIT)</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
-				<string>NO</string>
-				<key>GCC_VERSION</key>
-				<string>com.apple.compilers.llvm.clang.1_0</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>5.1</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>60A7BFF115FA82A700FEB45E</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>ARCHS</key>
-				<string>$(ARCHS_STANDARD_32_BIT)</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_VERSION</key>
-				<string>com.apple.compilers.llvm.clang.1_0</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>5.1</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>60A7BFF215FA82A700FEB45E</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>60A7BFF315FA82A700FEB45E</string>
-				<string>60A7BFF415FA82A700FEB45E</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>60A7BFF315FA82A700FEB45E</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>2391DF3671F44BCBAC4CBDAD</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>DSTROOT</key>
-				<string>/tmp/PutioKit.dst</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>PutioKit/PutioKit-Prefix.pch</string>
-				<key>OTHER_LDFLAGS</key>
-				<string>-ObjC</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>60A7BFF415FA82A700FEB45E</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>2391DF3671F44BCBAC4CBDAD</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>DSTROOT</key>
-				<string>/tmp/PutioKit.dst</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>PutioKit/PutioKit-Prefix.pch</string>
-				<key>OTHER_LDFLAGS</key>
-				<string>-ObjC</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>60A7BFF515FA82A700FEB45E</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>60A7BFF615FA82A700FEB45E</string>
-				<string>60A7BFF715FA82A700FEB45E</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>60A7BFF615FA82A700FEB45E</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>"$(SDKROOT)/Developer/Library/Frameworks"</string>
-					<string>"$(DEVELOPER_LIBRARY_DIR)/Frameworks"</string>
-				</array>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>PutioKit/PutioKit-Prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>PutioKitTests/PutioKitTests-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>octest</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>60A7BFF715FA82A700FEB45E</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>"$(SDKROOT)/Developer/Library/Frameworks"</string>
-					<string>"$(DEVELOPER_LIBRARY_DIR)/Frameworks"</string>
-				</array>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>PutioKit/PutioKit-Prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>PutioKitTests/PutioKitTests-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>octest</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>60A7BFFA15FA82F600FEB45E</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>PKManager.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>60A7BFFB15FA82F600FEB45E</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>PKManager.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>60A7BFFE15FA82F600FEB45E</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>PKAccount.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>60A7BFFF15FA82F600FEB45E</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>PKAccount.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>60A7C00215FA82F600FEB45E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>60A7BFFB15FA82F600FEB45E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>60A7C00315FA82F600FEB45E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>60A7BFFB15FA82F600FEB45E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>60A7C00615FA82F600FEB45E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>60A7BFFF15FA82F600FEB45E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>60A7C00715FA82F600FEB45E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>60A7BFFF15FA82F600FEB45E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>60A7C00815FA8ACA00FEB45E</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>PKAccountSettings.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>60A7C00915FA8ACA00FEB45E</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>PKAccountSettings.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>60A7C00A15FA8ACA00FEB45E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>60A7C00915FA8ACA00FEB45E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>60A7C00B15FA8ACA00FEB45E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>60A7C00915FA8ACA00FEB45E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>60A7C00C15FA941F00FEB45E</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>PKFriend.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>60A7C00D15FA941F00FEB45E</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>PKFriend.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>60A7C00E15FA941F00FEB45E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>60A7C00D15FA941F00FEB45E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>60A7C00F15FA941F00FEB45E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>60A7C00D15FA941F00FEB45E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>6804E653AFB44D35860808DA</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Pods-resources.sh"
-</string>
-		</dict>
-		<key>85F9AFE6360A4E2CB1049AF6</key>
-		<dict>
-			<key>fileRef</key>
-			<string>25070C1AE9124CAAA0308320</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>60A7BFC415FA82A700FEB45E</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6028B7F915FD08DF002EA5A1 /* PKFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 6028B7F615FD08DF002EA5A1 /* PKFile.m */; };
+		6028B7FA15FD08DF002EA5A1 /* PKFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 6028B7F615FD08DF002EA5A1 /* PKFile.m */; };
+		6039D03C15FBC8EA00ACA5B4 /* PKTransfer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6039D03915FBC8EA00ACA5B4 /* PKTransfer.m */; };
+		6039D03D15FBC8EA00ACA5B4 /* PKTransfer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6039D03915FBC8EA00ACA5B4 /* PKTransfer.m */; };
+		60549111163F5B0600E65853 /* PutIOClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6054910E163F5B0600E65853 /* PutIOClient.m */; };
+		60549112163F5B0600E65853 /* V2PutIOAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 60549110163F5B0600E65853 /* V2PutIOAPIClient.m */; };
+		60549116163F5C9600E65853 /* PutIONetworkConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 60549115163F5C9600E65853 /* PutIONetworkConstants.m */; };
+		6054911A163F5E9000E65853 /* PKFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 60549119163F5E9000E65853 /* PKFolder.m */; };
+		609E79A2163E322A00F85EC4 /* PKObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E79A1163E322A00F85EC4 /* PKObject.m */; };
+		60A7BFD115FA82A700FEB45E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60A7BFD015FA82A700FEB45E /* Foundation.framework */; };
+		60A7BFD615FA82A700FEB45E /* PutioKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 60A7BFD515FA82A700FEB45E /* PutioKit.h */; };
+		60A7BFE015FA82A700FEB45E /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60A7BFDF15FA82A700FEB45E /* SenTestingKit.framework */; };
+		60A7BFE215FA82A700FEB45E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60A7BFE115FA82A700FEB45E /* UIKit.framework */; };
+		60A7BFE315FA82A700FEB45E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60A7BFD015FA82A700FEB45E /* Foundation.framework */; };
+		60A7BFE615FA82A700FEB45E /* libPutioKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 60A7BFCD15FA82A700FEB45E /* libPutioKit.a */; };
+		60A7BFEC15FA82A700FEB45E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 60A7BFEA15FA82A700FEB45E /* InfoPlist.strings */; };
+		60A7BFEF15FA82A700FEB45E /* PutioKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A7BFEE15FA82A700FEB45E /* PutioKitTests.m */; };
+		60A7C00615FA82F600FEB45E /* PKAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A7BFFF15FA82F600FEB45E /* PKAccount.m */; };
+		60A7C00715FA82F600FEB45E /* PKAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A7BFFF15FA82F600FEB45E /* PKAccount.m */; };
+		60A7C00A15FA8ACA00FEB45E /* PKAccountSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A7C00915FA8ACA00FEB45E /* PKAccountSettings.m */; };
+		60A7C00B15FA8ACA00FEB45E /* PKAccountSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A7C00915FA8ACA00FEB45E /* PKAccountSettings.m */; };
+		60A7C00E15FA941F00FEB45E /* PKFriend.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A7C00D15FA941F00FEB45E /* PKFriend.m */; };
+		60A7C00F15FA941F00FEB45E /* PKFriend.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A7C00D15FA941F00FEB45E /* PKFriend.m */; };
+		85F9AFE6360A4E2CB1049AF6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 25070C1AE9124CAAA0308320 /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		60A7BFE415FA82A700FEB45E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 60A7BFC415FA82A700FEB45E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 60A7BFCC15FA82A700FEB45E;
+			remoteInfo = PutioKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		60A7BFCB15FA82A700FEB45E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+				60A7BFD615FA82A700FEB45E /* PutioKit.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2391DF3671F44BCBAC4CBDAD /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		25070C1AE9124CAAA0308320 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6028B7F515FD08DF002EA5A1 /* PKFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = PKFile.h; sourceTree = "<group>"; };
+		6028B7F615FD08DF002EA5A1 /* PKFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKFile.m; sourceTree = "<group>"; };
+		6039D03815FBC8EA00ACA5B4 /* PKTransfer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = PKTransfer.h; sourceTree = "<group>"; };
+		6039D03915FBC8EA00ACA5B4 /* PKTransfer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKTransfer.m; sourceTree = "<group>"; };
+		6054910D163F5B0600E65853 /* PutIOClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PutIOClient.h; sourceTree = "<group>"; };
+		6054910E163F5B0600E65853 /* PutIOClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PutIOClient.m; sourceTree = "<group>"; };
+		6054910F163F5B0600E65853 /* V2PutIOAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2PutIOAPIClient.h; sourceTree = "<group>"; };
+		60549110163F5B0600E65853 /* V2PutIOAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2PutIOAPIClient.m; sourceTree = "<group>"; };
+		60549114163F5C9600E65853 /* PutIONetworkConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PutIONetworkConstants.h; sourceTree = "<group>"; };
+		60549115163F5C9600E65853 /* PutIONetworkConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PutIONetworkConstants.m; sourceTree = "<group>"; };
+		60549118163F5E9000E65853 /* PKFolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKFolder.h; sourceTree = "<group>"; };
+		60549119163F5E9000E65853 /* PKFolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKFolder.m; sourceTree = "<group>"; };
+		609E79A0163E322A00F85EC4 /* PKObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKObject.h; sourceTree = "<group>"; };
+		609E79A1163E322A00F85EC4 /* PKObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKObject.m; sourceTree = "<group>"; };
+		60A7BFCD15FA82A700FEB45E /* libPutioKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPutioKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		60A7BFD015FA82A700FEB45E /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		60A7BFD415FA82A700FEB45E /* PutioKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PutioKit-Prefix.pch"; sourceTree = "<group>"; };
+		60A7BFD515FA82A700FEB45E /* PutioKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PutioKit.h; sourceTree = "<group>"; };
+		60A7BFDE15FA82A700FEB45E /* PutioKitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PutioKitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		60A7BFDF15FA82A700FEB45E /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		60A7BFE115FA82A700FEB45E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		60A7BFE915FA82A700FEB45E /* PutioKitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PutioKitTests-Info.plist"; sourceTree = "<group>"; };
+		60A7BFEB15FA82A700FEB45E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		60A7BFED15FA82A700FEB45E /* PutioKitTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PutioKitTests.h; sourceTree = "<group>"; };
+		60A7BFEE15FA82A700FEB45E /* PutioKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PutioKitTests.m; sourceTree = "<group>"; };
+		60A7BFFE15FA82F600FEB45E /* PKAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKAccount.h; sourceTree = "<group>"; };
+		60A7BFFF15FA82F600FEB45E /* PKAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKAccount.m; sourceTree = "<group>"; };
+		60A7C00815FA8ACA00FEB45E /* PKAccountSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKAccountSettings.h; sourceTree = "<group>"; };
+		60A7C00915FA8ACA00FEB45E /* PKAccountSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKAccountSettings.m; sourceTree = "<group>"; };
+		60A7C00C15FA941F00FEB45E /* PKFriend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKFriend.h; sourceTree = "<group>"; };
+		60A7C00D15FA941F00FEB45E /* PKFriend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKFriend.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		60A7BFCA15FA82A700FEB45E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60A7BFD115FA82A700FEB45E /* Foundation.framework in Frameworks */,
+				85F9AFE6360A4E2CB1049AF6 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		60A7BFDA15FA82A700FEB45E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60A7BFE015FA82A700FEB45E /* SenTestingKit.framework in Frameworks */,
+				60A7BFE215FA82A700FEB45E /* UIKit.framework in Frameworks */,
+				60A7BFE315FA82A700FEB45E /* Foundation.framework in Frameworks */,
+				60A7BFE615FA82A700FEB45E /* libPutioKit.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		60549117163F5CF100E65853 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				60549114163F5C9600E65853 /* PutIONetworkConstants.h */,
+				60549115163F5C9600E65853 /* PutIONetworkConstants.m */,
+			);
+			name = Constants;
+			sourceTree = "<group>";
+		};
+		609E79A4163E323200F85EC4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				609E79A0163E322A00F85EC4 /* PKObject.h */,
+				609E79A1163E322A00F85EC4 /* PKObject.m */,
+				6028B7F515FD08DF002EA5A1 /* PKFile.h */,
+				6028B7F615FD08DF002EA5A1 /* PKFile.m */,
+				60549118163F5E9000E65853 /* PKFolder.h */,
+				60549119163F5E9000E65853 /* PKFolder.m */,
+				6039D03815FBC8EA00ACA5B4 /* PKTransfer.h */,
+				6039D03915FBC8EA00ACA5B4 /* PKTransfer.m */,
+				60A7BFFE15FA82F600FEB45E /* PKAccount.h */,
+				60A7BFFF15FA82F600FEB45E /* PKAccount.m */,
+				60A7C00815FA8ACA00FEB45E /* PKAccountSettings.h */,
+				60A7C00915FA8ACA00FEB45E /* PKAccountSettings.m */,
+				60A7C00C15FA941F00FEB45E /* PKFriend.h */,
+				60A7C00D15FA941F00FEB45E /* PKFriend.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		60A7BFC215FA82A700FEB45E = {
+			isa = PBXGroup;
+			children = (
+				60A7BFD215FA82A700FEB45E /* PutioKit */,
+				60A7BFE715FA82A700FEB45E /* PutioKitTests */,
+				60A7BFCF15FA82A700FEB45E /* Frameworks */,
+				60A7BFCE15FA82A700FEB45E /* Products */,
+				2391DF3671F44BCBAC4CBDAD /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		60A7BFCE15FA82A700FEB45E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				60A7BFCD15FA82A700FEB45E /* libPutioKit.a */,
+				60A7BFDE15FA82A700FEB45E /* PutioKitTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		60A7BFCF15FA82A700FEB45E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				60A7BFD015FA82A700FEB45E /* Foundation.framework */,
+				60A7BFDF15FA82A700FEB45E /* SenTestingKit.framework */,
+				60A7BFE115FA82A700FEB45E /* UIKit.framework */,
+				25070C1AE9124CAAA0308320 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		60A7BFD215FA82A700FEB45E /* PutioKit */ = {
+			isa = PBXGroup;
+			children = (
+				60A7BFD515FA82A700FEB45E /* PutioKit.h */,
+				6054910D163F5B0600E65853 /* PutIOClient.h */,
+				6054910E163F5B0600E65853 /* PutIOClient.m */,
+				6054910F163F5B0600E65853 /* V2PutIOAPIClient.h */,
+				60549110163F5B0600E65853 /* V2PutIOAPIClient.m */,
+				60549117163F5CF100E65853 /* Constants */,
+				609E79A4163E323200F85EC4 /* Models */,
+				60A7BFD315FA82A700FEB45E /* Supporting Files */,
+			);
+			path = PutioKit;
+			sourceTree = "<group>";
+		};
+		60A7BFD315FA82A700FEB45E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				60A7BFD415FA82A700FEB45E /* PutioKit-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		60A7BFE715FA82A700FEB45E /* PutioKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				60A7BFED15FA82A700FEB45E /* PutioKitTests.h */,
+				60A7BFEE15FA82A700FEB45E /* PutioKitTests.m */,
+				60A7BFE815FA82A700FEB45E /* Supporting Files */,
+			);
+			path = PutioKitTests;
+			sourceTree = "<group>";
+		};
+		60A7BFE815FA82A700FEB45E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				60A7BFE915FA82A700FEB45E /* PutioKitTests-Info.plist */,
+				60A7BFEA15FA82A700FEB45E /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		60A7BFCC15FA82A700FEB45E /* PutioKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 60A7BFF215FA82A700FEB45E /* Build configuration list for PBXNativeTarget "PutioKit" */;
+			buildPhases = (
+				60A7BFC915FA82A700FEB45E /* Sources */,
+				60A7BFCA15FA82A700FEB45E /* Frameworks */,
+				60A7BFCB15FA82A700FEB45E /* CopyFiles */,
+				6804E653AFB44D35860808DA /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PutioKit;
+			productName = PutioKit;
+			productReference = 60A7BFCD15FA82A700FEB45E /* libPutioKit.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		60A7BFDD15FA82A700FEB45E /* PutioKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 60A7BFF515FA82A700FEB45E /* Build configuration list for PBXNativeTarget "PutioKitTests" */;
+			buildPhases = (
+				60A7BFD915FA82A700FEB45E /* Sources */,
+				60A7BFDA15FA82A700FEB45E /* Frameworks */,
+				60A7BFDB15FA82A700FEB45E /* Resources */,
+				60A7BFDC15FA82A700FEB45E /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				60A7BFE515FA82A700FEB45E /* PBXTargetDependency */,
+			);
+			name = PutioKitTests;
+			productName = PutioKitTests;
+			productReference = 60A7BFDE15FA82A700FEB45E /* PutioKitTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		60A7BFC415FA82A700FEB45E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = PK;
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = PutIOKit;
+			};
+			buildConfigurationList = 60A7BFC715FA82A700FEB45E /* Build configuration list for PBXProject "PutioKit" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 60A7BFC215FA82A700FEB45E;
+			productRefGroup = 60A7BFCE15FA82A700FEB45E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				60A7BFCC15FA82A700FEB45E /* PutioKit */,
+				60A7BFDD15FA82A700FEB45E /* PutioKitTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		60A7BFDB15FA82A700FEB45E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60A7BFEC15FA82A700FEB45E /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		60A7BFDC15FA82A700FEB45E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		6804E653AFB44D35860808DA /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		60A7BFC915FA82A700FEB45E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60A7C00615FA82F600FEB45E /* PKAccount.m in Sources */,
+				60A7C00A15FA8ACA00FEB45E /* PKAccountSettings.m in Sources */,
+				60A7C00E15FA941F00FEB45E /* PKFriend.m in Sources */,
+				6039D03C15FBC8EA00ACA5B4 /* PKTransfer.m in Sources */,
+				6028B7F915FD08DF002EA5A1 /* PKFile.m in Sources */,
+				609E79A2163E322A00F85EC4 /* PKObject.m in Sources */,
+				60549111163F5B0600E65853 /* PutIOClient.m in Sources */,
+				60549112163F5B0600E65853 /* V2PutIOAPIClient.m in Sources */,
+				60549116163F5C9600E65853 /* PutIONetworkConstants.m in Sources */,
+				6054911A163F5E9000E65853 /* PKFolder.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		60A7BFD915FA82A700FEB45E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60A7BFEF15FA82A700FEB45E /* PutioKitTests.m in Sources */,
+				60A7C00715FA82F600FEB45E /* PKAccount.m in Sources */,
+				60A7C00B15FA8ACA00FEB45E /* PKAccountSettings.m in Sources */,
+				60A7C00F15FA941F00FEB45E /* PKFriend.m in Sources */,
+				6039D03D15FBC8EA00ACA5B4 /* PKTransfer.m in Sources */,
+				6028B7FA15FD08DF002EA5A1 /* PKFile.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		60A7BFE515FA82A700FEB45E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 60A7BFCC15FA82A700FEB45E /* PutioKit */;
+			targetProxy = 60A7BFE415FA82A700FEB45E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		60A7BFEA15FA82A700FEB45E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				60A7BFEB15FA82A700FEB45E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		60A7BFF015FA82A700FEB45E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		60A7BFF115FA82A700FEB45E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		60A7BFF315FA82A700FEB45E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2391DF3671F44BCBAC4CBDAD /* Pods.xcconfig */;
+			buildSettings = {
+				DSTROOT = /tmp/PutioKit.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PutioKit/PutioKit-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		60A7BFF415FA82A700FEB45E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2391DF3671F44BCBAC4CBDAD /* Pods.xcconfig */;
+			buildSettings = {
+				DSTROOT = /tmp/PutioKit.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PutioKit/PutioKit-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		60A7BFF615FA82A700FEB45E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PutioKit/PutioKit-Prefix.pch";
+				INFOPLIST_FILE = "PutioKitTests/PutioKitTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		60A7BFF715FA82A700FEB45E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PutioKit/PutioKit-Prefix.pch";
+				INFOPLIST_FILE = "PutioKitTests/PutioKitTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		60A7BFC715FA82A700FEB45E /* Build configuration list for PBXProject "PutioKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				60A7BFF015FA82A700FEB45E /* Debug */,
+				60A7BFF115FA82A700FEB45E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		60A7BFF215FA82A700FEB45E /* Build configuration list for PBXNativeTarget "PutioKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				60A7BFF315FA82A700FEB45E /* Debug */,
+				60A7BFF415FA82A700FEB45E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		60A7BFF515FA82A700FEB45E /* Build configuration list for PBXNativeTarget "PutioKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				60A7BFF615FA82A700FEB45E /* Debug */,
+				60A7BFF715FA82A700FEB45E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 60A7BFC415FA82A700FEB45E /* Project object */;
+}
