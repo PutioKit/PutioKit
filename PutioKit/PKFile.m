@@ -30,19 +30,6 @@
 
 @implementation PKFile
 
-@synthesize isShared;
-@synthesize name;
-@synthesize screenshot;
-@synthesize createdAt;
-@synthesize parentID;
-@synthesize isMP4Available;
-@synthesize contentType;
-@synthesize icon;
-@synthesize id;
-@synthesize size;
-
-
-
 + (id)objectWithDictionary:(NSDictionary *)dictionary {
     PKFile *object = [super objectWithDictionary:dictionary];
     if (object) {
@@ -51,4 +38,5 @@
     }
     return object;
 }
+
 @end

@@ -28,11 +28,12 @@
 
 #import <Foundation/NSObject.h>
 #import "PKAccountSettings.h"
+#import "PKObject.h"
 
 /**
- This class provides a NSObject subclass in type of PKAccount.
+ This class provides a PKObject subclass in type of PKAccount.
  */
-@interface PKAccount : NSObject
+@interface PKAccount : PKObject
 
 /**---------------------------------------------------------------------------------------
  * @name Properties
@@ -55,17 +56,5 @@
 
 /** PKAccountSettings instance that holds user's settings. */
 @property (strong, nonatomic) PKAccountSettings *settings;
-
-/**---------------------------------------------------------------------------------------
- * @name Instance methods
- *  ---------------------------------------------------------------------------------------
- */
-/**
- Initializes an PKAccount object with given dictionary, returned from API, and returns the instance.
- @param dictionary A NSDictionary object contains data obtained from API.
- @return PKAccount
- @warning *Important:* Needs better error handling. Identification of exception must done and should act properly.
- */
-- (PKAccount *)initWithDictionary:(NSDictionary *)dictionary;
 
 @end

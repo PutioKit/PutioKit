@@ -30,17 +30,4 @@
 
 @implementation PKFriend
 
-@synthesize name;
-
-- (PKFriend *)initWithDictionary:(NSDictionary *)dictionary
-{
-    self = [super init];
-    
-    if (self) {
-        self.name = [dictionary valueForKey:@"name"];
-    }
-    
-    return self;
-}
-
 @end

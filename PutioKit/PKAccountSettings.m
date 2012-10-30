@@ -29,24 +29,4 @@
 #import "PKAccountSettings.h"
 
 @implementation PKAccountSettings
-
-@synthesize default_download_folder;
-@synthesize is_invisible;
-@synthesize hide_items_shared;
-@synthesize extraction_default;
-
-- (PKAccountSettings *)initWithDictionary:(NSDictionary *)dictionary
-{
-    self = [super init];
-    
-    if (self) {
-        self.default_download_folder = @([[dictionary valueForKey:@"default_download_folder"] integerValue]);
-        self.is_invisible = @([[dictionary valueForKey:@"is_invisible"] boolValue]);
-        self.hide_items_shared = @([[dictionary valueForKey:@"hide_items_shared"] boolValue]);
-        self.extraction_default = @([[dictionary valueForKey:@"extraction_default"] boolValue]);
-    }
-    
-    return self;
-}
-
 @end

@@ -26,12 +26,12 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import <Foundation/NSObject.h>
+#import "PKObject.h"
 
 /**
- This class provides a NSObject subclass in type of PKFriend.
+ This class provides a PKObject subclass in type of PKFriend.
  */
-@interface PKFriend : NSObject
+@interface PKFriend : PKObject
 
 /**---------------------------------------------------------------------------------------
  * @name Properties
@@ -39,16 +39,5 @@
  */
 /** Username of friend. */
 @property (strong, nonatomic) NSString *name;
-
-/**---------------------------------------------------------------------------------------
- * @name Instance methods
- *  ---------------------------------------------------------------------------------------
- */
-/**
- Initializes an PKFriend object with given dictionary, returned from API, and returns the instance.
- @param dictionary A NSDictionary object contains data obtained from API.
- @return PKFriend
- */
-- (PKFriend *)initWithDictionary:(NSDictionary *)dictionary;
 
 @end

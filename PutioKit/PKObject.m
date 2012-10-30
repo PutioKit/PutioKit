@@ -27,8 +27,15 @@
             SEL setPropertySelector = [self propertySelectorToSetPropertySelector:propertySelector];
 
             if ([self respondsToSelector:propertySelector] && [self respondsToSelector:setPropertySelector]) {
-                // research this warning.
+
+                // The following line has a warning due to ARC not knowing whether
+                // to retain the return value of it, as we don't use the
+                // return value we can ditch it.
+
+                #pragma clang diagnostic push
+                #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
                 [self performSelector:setPropertySelector withObject:dictionary[key]];
+                #pragma clang diagnostic pop
             }
         }
 

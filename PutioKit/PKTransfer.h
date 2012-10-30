@@ -26,12 +26,12 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import <Foundation/NSObject.h>
+#import "PKObject.h"
 
 /**
- This class provides a NSObject subclass in type of PKTransfer.
+ This class provides a PKObject subclass in type of PKTransfer.
  */
-@interface PKTransfer : NSObject
+@interface PKTransfer : PKObject
 
 /**---------------------------------------------------------------------------------------
  * @name Properties
@@ -42,83 +42,72 @@
 @property (strong, nonatomic) NSNumber *uploaded;
 
 /** Estimated time to complete download in seconds. */
-@property (strong, nonatomic) NSNumber *estimated_time;
+@property (strong, nonatomic) NSNumber *estimatedTime;
 
 /** Number of peers fetching from Put.io. */
-@property (strong, nonatomic) NSNumber *peers_getting_from_us;
+@property (strong, nonatomic) NSNumber *peersGettingFromUs;
 
 /** Boolean value to determine automatic extraction after download finishes. */
 @property (strong, nonatomic) NSNumber *extract;
 
 /** Decimal value of current seed ratio. */
-@property (strong, nonatomic) NSNumber *current_ratio;
+@property (strong, nonatomic) NSNumber *currentRatio;
 
 /** Size of file in bytes. */
 @property (strong, nonatomic) NSNumber *size;
 
 /** Upload speed in bytes per second. */
-@property (strong, nonatomic) NSNumber *up_speed;
+@property (strong, nonatomic) NSNumber *upSpeed;
 
 /** Boolean value to determine if file is seeding by Put.io. */
-@property (strong, nonatomic) NSNumber *is_seeding;
+@property (strong, nonatomic) NSNumber *isSeeding;
 
 /** Transfer id assigned by Put.io. */
-@property (strong, nonatomic) NSNumber *tid;
+@property (strong, nonatomic) NSNumber *id;
 
 /** Source address of file. */
 @property (strong, nonatomic) NSString *source;
 
 /** ID of subscription which file is downloading via. */
-@property (strong, nonatomic) NSNumber *subscription_id;
+@property (strong, nonatomic) NSNumber *subscriptionID;
 
 /** Status message of transfer. */
-@property (strong, nonatomic) NSString *status_message;
+@property (strong, nonatomic) NSString *statusMessage;
 
 /** Status of transfer. */
 @property (strong, nonatomic) NSString *status;
 
 /** Download speed in bytes per second. */
-@property (strong, nonatomic) NSNumber *down_speed;
+@property (strong, nonatomic) NSNumber *downSpeed;
 
 /** Number of peers connected to Put.io. */
-@property (strong, nonatomic) NSNumber *peers_connected;
+@property (strong, nonatomic) NSNumber *peersConnected;
 
 /** Downloaded file size in bytes. */
 @property (strong, nonatomic) NSNumber *downloaded;
 
 /** File id assigned by Put.io. */
-@property (strong, nonatomic) NSNumber *file_id;
+@property (strong, nonatomic) NSNumber *fileID;
 
 /** Number of peers sending to Put.io. */
-@property (strong, nonatomic) NSNumber *peers_sending_to_us;
+@property (strong, nonatomic) NSNumber *peersSendingToUs;
 
 /** Percent of file has downloaded. */
-@property (strong, nonatomic) NSNumber *percent_done;
+@property (strong, nonatomic) NSNumber *percentDone;
 
 /** Message sent by tracker. */
-@property (strong, nonatomic) NSString *tracker_message;
+@property (strong, nonatomic) NSString *trackerMessage;
 
 /** Name of file. */
 @property (strong, nonatomic) NSString *name;
 
 /** Creation date of transfer in iso8601 format. */
-@property (strong, nonatomic) NSString *created_at;
+@property (strong, nonatomic) NSString *createdAt;
 
 /** Error message of transfer. */
-@property (strong, nonatomic) NSString *error_message;
+@property (strong, nonatomic) NSString *errorMessage;
 
 /** Parent folder id which file will be saved in. */
-@property (strong, nonatomic) NSNumber *save_parent_id;
-
-/**---------------------------------------------------------------------------------------
- * @name Instance methods
- *  ---------------------------------------------------------------------------------------
- */
-/**
- Initializes an PKTransfer object with given dictionary, returned from API, and returns the instance.
- @param dictionary A NSDictionary object contains data obtained from API.
- @return PKTransfer
- */
-- (PKTransfer *)initWithDictionary:(NSDictionary *)dictionary;
+@property (strong, nonatomic) NSNumber *saveParentID;
 
 @end

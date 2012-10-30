@@ -26,38 +26,27 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import <Foundation/NSObject.h>
+#import "PKObject.h"
 
 /**
  This class provides a NSObject subclass in type of PKAccountSettings.
  */
-@interface PKAccountSettings : NSObject
+@interface PKAccountSettings : PKObject
 
 /**---------------------------------------------------------------------------------------
  * @name Properties
  *  ---------------------------------------------------------------------------------------
  */
 /** ID of folder that downloaded files put in by default. */
-@property (nonatomic) NSNumber *default_download_folder;
+@property (nonatomic) NSNumber *defaultDownloadFolder;
 
 /** Boolean value that defines user is invisible in sharing page. */
-@property (nonatomic) NSNumber *is_invisible;
+@property (nonatomic) NSNumber *isInvisible;
 
 /** Boolean value that defines "items shared with you" folder is visible or not. */
-@property (nonatomic) NSNumber *hide_items_shared;
+@property (nonatomic) NSNumber *hideItemsShared;
 
 /** Boolean value that defines extraction of downloaded files is enabled by default or not. */
-@property (nonatomic) NSNumber *extraction_default;
-
-/**---------------------------------------------------------------------------------------
- * @name Instance methods
- *  ---------------------------------------------------------------------------------------
- */
-/**
- Initializes an PKAccountSettings object with given dictionary, returned from API, and returns the instance.
- @param dictionary A NSDictionary object contains data obtained from API.
- @return PKAccountSettings
- */
-- (PKAccountSettings *)initWithDictionary:(NSDictionary *)dictionary;
+@property (nonatomic) NSNumber *extractionDefault;
 
 @end

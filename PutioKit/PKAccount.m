@@ -30,32 +30,17 @@
 
 @implementation PKAccount
 
-@synthesize username;
-@synthesize mail;
-@synthesize diskAvailable;
-@synthesize diskUsed;
-@synthesize diskSize;
-
-- (PKAccount *)initWithDictionary:(NSDictionary *)dictionary
++ (id)objectWithDictionary:(NSDictionary *)dictionary;
 {
-    self = [super init];
-    
-    if (self) {
-        self.username = [dictionary valueForKey:@"username"];
-        self.mail = [dictionary valueForKey:@"mail"];
-        self.diskAvailable = @([[[dictionary valueForKey:@"disk"] valueForKey:@"avail"] longLongValue]);
-        self.diskUsed = @([[[dictionary valueForKey:@"disk"] valueForKey:@"used"] longLongValue]);
-        self.diskSize = @([[[dictionary valueForKey:@"disk"] valueForKey:@"size"] longLongValue]);
+    PKAccount *object = [super objectWithDictionary:dictionary];
+    if (object) {
+        object.settings = [PKAccountSettings objectWithDictionary:dictionary[@"settings"]];
         
-        @try {
-            self.settings = [[PKAccountSettings alloc] initWithDictionary:[dictionary valueForKey:@"settings"]];
-        }
-        @catch (NSException *exception) {
-            NSLog(@"main: Caught %@: %@", [exception name], [exception reason]);
-        }
+        object.diskAvailable = @([dictionary[@"disk"][@"avail"] longLongValue]);
+        object.diskUsed      = @([dictionary[@"disk"][@"used"] longLongValue]);
+        object.diskSize      = @([dictionary[@"disk"][@"size"] longLongValue]);
     }
-    
-    return self;
+    return object;
 }
 
 @end

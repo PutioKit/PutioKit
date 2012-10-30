@@ -29,7 +29,7 @@
 #import "PKObject.h"
 
 /**
- This class provides a NSObject subclass in type of PKFile.
+ This class provides a PKObject subclass in type of PKFile.
  */
 @interface PKFile : PKObject
 
