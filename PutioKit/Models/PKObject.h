@@ -6,7 +6,6 @@
 //  Copyright (c) 2012 Ahmet AYGÜN. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 
 @interface PKObject : NSObject
 

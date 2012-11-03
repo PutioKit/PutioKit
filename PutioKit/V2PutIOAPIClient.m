@@ -10,55 +10,49 @@
 
 #import "V2PutIOAPIClient.h"
 #import "PutIONetworkConstants.h"
+#import "PutioKit.h"
 
-@interface V2PutIOAPIClient ()
-- (NSArray *)filesAndFoldersFromJSONArray:(NSArray *)dictionaries withParent:(Folder *)folder;
-- (void)genericGetAtPath:(NSString *)path :(void(^)(id userInfoObject))onComplete;
-@end
 
-@implementation V2PutIOAPIClient 
-@synthesize apiToken, actionBlocks;
+@implementation V2PutIOAPIClient
 
 + (id)setup {
     V2PutIOAPIClient *api = [[V2PutIOAPIClient alloc] initWithBaseURL:[NSURL URLWithString:@"https://api.put.io/"]];
                           
     if (api) {
-        [[NSNotificationCenter defaultCenter] addObserver:api 
-                                                 selector:@selector(getAPIToken:) 
-                                                     name:OAuthTokenWasSavedNotification 
-                                                   object:nil];
-        [api getAPIToken:nil];
         [api registerHTTPOperationClass:[AFJSONRequestOperation class]];
+        api.apiToken = [[NSUserDefaults standardUserDefaults] objectForKey:PKAppAuthTokenDefault];
     }
     return api;
-}    
+}
 
-- (void)getAPIToken:(NSNotification *)notification {
-    self.apiToken = [[NSUserDefaults standardUserDefaults] objectForKey:AppAuthTokenDefault];
+
+// When is the app connected already
+- (BOOL)ready {
+    return (self.apiToken != nil);
 }
 
 - (void)getAccessTokenFromOauthCode:(NSString *)code {
     // https://api.put.io/v2/oauth2/access_token?client_id=YOUR_CLIENT_ID&client_secret=YOUR_CLIENT_SECRET&grant_type=authorization_code&redirect_uri=YOUR_REGISTERED_REDIRECT_URI&code=CODE
     
-    NSString *address = [NSString stringWithFormat:PTFormatOauthTokenURL, @"10", APP_SECRET, @"authorization_code", PKCallbackOriginal, code];
+    NSString *address = [NSString stringWithFormat:PTFormatOauthTokenURL, self.appOAuthID, self.clientSecret, @"authorization_code", PKCallbackOriginal, code];
     
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:address]];
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
         
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        [defaults setObject:[JSON valueForKeyPath:@"access_token"] forKey:AppAuthTokenDefault];
-        [defaults synchronize];
-        [[NSNotificationCenter defaultCenter] postNotificationName:OAuthTokenWasSavedNotification object:nil userInfo:nil];
-        
-    }failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+        NSString *appAuthToken = [JSON valueForKeyPath:@"access_token"];
+        [[NSUserDefaults standardUserDefaults] setObject:appAuthToken forKey:PKAppAuthTokenDefault];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        self.apiToken = appAuthToken;
+
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
         NSLog(@"error %@", error);
     }];
     [operation start];
 }
 
-- (void)getAccount:(void(^)(PKAccount *account))onComplete {
-    NSDictionary *params = @{@"oauth_token": self.apiToken};
-    [self getPath:@"/v2/account/info" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+- (void)getAccount:(void(^)(PKAccount *account))onComplete failure:(void (^)(NSError *))failure {
+    NSDictionary *params = @{ @"oauth_token": self.apiToken };
+    [self getPath:@"/v2/account/info" parameters:params success: ^(AFHTTPRequestOperation *operation, id responseObject) {
         NSError *error = nil;
         NSDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:&error];
         if (error) {
@@ -73,13 +67,18 @@
             NSLog(@"request %@", operation.request.URL);
             NSLog(@"request not OK, JSON response is - %@", jsonDictionary);
         }
+
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        onComplete(error);
+        failure(error);
     }];
 }
 
-- (void)getFolder:(Folder*)folder :(void(^)(id userInfoObject))onComplete {
-    NSDictionary *params = @{@"oauth_token": self.apiToken, @"parent_id": folder.id};
+- (void)getFolder:(PKFolder *)folder :(void(^)(NSArray *filesAndFolders))onComplete failure:(void (^)(NSError *))failure {
+    NSDictionary *params = @{
+        @"oauth_token": self.apiToken,
+        @"parent_id": folder.id
+    };
+    
     [self getPath:@"/v2/files/list" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"got folder");
         NSError *error = nil;
@@ -100,23 +99,13 @@
     }];
 }
 
-- (NSArray *)filesAndFoldersFromJSONArray:(NSArray *)dictionaries withParent:(Folder *)parent{
+- (NSArray *)filesAndFoldersFromJSONArray:(NSArray *)dictionaries withParent:(PKFolder *)parent{
     NSMutableArray *objects = [NSMutableArray array];
     for (NSDictionary *dictionary in dictionaries) {
         
         id contentType = dictionary[@"content_type"];
         if ( contentType == [NSNull null] || [contentType isEqualToString:@"application/x-directory"]) {
-            Folder *folder = [[Folder alloc] init];
-            folder.id = [dictionary[@"id"] stringValue];
-            folder.name = dictionary[@"name"];
-            folder.displayName = [File createDisplayNameFromName:folder.name];
-            folder.screenShotURL =  dictionary[@"icon"];
-            folder.parentID = [dictionary[@"parent_id"] stringValue];
-
-            if (dictionary[@"size"] != [NSNull null]) {
-                folder.size = dictionary[@"size"];
-            }
-            
+            PKFolder *folder = [PKFolder objectWithDictionary:dictionary];
             folder.parentFolder = parent;
             [objects addObject:folder];
             
@@ -249,10 +238,6 @@
         NSLog(@"failure!");
       onComplete(error);        
     }];
-}
-
-- (BOOL)ready {
-    return (self.apiToken != nil);
 }
 
 @end

@@ -11,21 +11,24 @@
 
 @interface V2PutIOAPIClient : AFHTTPClient
 
-@property NSString* apiToken;
+@property NSString *apiToken;
+@property NSString *clientID;
+@property NSString *clientSecret;
+@property NSString *appOAuthID;
 
 + (id)setup;
 - (BOOL)ready;
 
-- (void)getAccount:(void(^)(PKAccount *account))onComplete;
+- (void)getAccount:(void(^)(PKAccount *account))onComplete failure:(void (^)(NSError *error))failure;
 
-- (void)getFolder:(Folder *)folder :(void(^)(id userInfoObject))onComplete;
-- (void)getInfoForFile:(File *)file :(void(^)(id userInfoObject))onComplete;
-
-- (void)getMP4InfoForFile:(File *)file :(void(^)(id userInfoObject))onComplete;
-- (void)requestMP4ForFile:(File *)file;
-
-- (void)getTransfers:(void(^)(id userInfoObject))onComplete;
-
-- (void)requestDeletionForDisplayItemID:(NSString *)itemID :(void(^)(id userInfoObject))onComplete;
-- (void)downloadTorrentOrMagnetURLAtPath:(NSString *)path :(void(^)(id userInfoObject))onComplete;
+//- (void)getFolder:(Folder *)folder :(void(^)(id userInfoObject))onComplete;
+//- (void)getInfoForFile:(File *)file :(void(^)(id userInfoObject))onComplete;
+//
+//- (void)getMP4InfoForFile:(File *)file :(void(^)(id userInfoObject))onComplete;
+//- (void)requestMP4ForFile:(File *)file;
+//
+//- (void)getTransfers:(void(^)(id userInfoObject))onComplete;
+//
+//- (void)requestDeletionForDisplayItemID:(NSString *)itemID :(void(^)(id userInfoObject))onComplete;
+//- (void)downloadTorrentOrMagnetURLAtPath:(NSString *)path :(void(^)(id userInfoObject))onComplete;
 @end

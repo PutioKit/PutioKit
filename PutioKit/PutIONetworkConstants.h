@@ -16,3 +16,9 @@ extern NSString *const PKSettingsURL;
 extern NSString *const PTFormatOauthTokenURL;
 extern NSString *const PKFormatOauthLoginURL;
 extern NSString *const PKFormatOauthURL;
+
+extern NSString *const PKAppOAuthCallback;
+
+extern NSString *const PKAppAuthTokenDefault;
+extern NSString *const PKAPIKeyDefault;
+extern NSString *const PKAPISecretDefault;

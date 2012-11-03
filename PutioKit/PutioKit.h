@@ -26,8 +26,10 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import "PKManager.h"
+#import "PKFolderItem.h"
 #import "PKFile.h"
+#import "PKFolder.h"
+
 #import "PKTransfer.h"
 #import "PKAccount.h"
 #import "PKAccountSettings.h"

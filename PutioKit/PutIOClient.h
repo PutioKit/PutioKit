@@ -21,15 +21,15 @@
 
 + (NSString *)appendOauthToken:(NSString *)inputURL;
 
-- (void)getAccount:(void(^)(PKAccount *account))onComplete;
+- (void)getAccount:(void(^)(PKAccount *account))onComplete failure:(void (^)(NSError *error))onFailure;
 
-- (void)getFolder:(PKFolder *)folder :(void(^)(id userInfoObject))onComplete;
-
-- (void)getMP4InfoForFile:(PKFile *)file :(void(^)(id userInfoObject))onComplete;
-- (void)requestMP4ForFile:(PKFile *)file;
-
-- (void)getTransfers:(void(^)(NSArray *transfers))onComplete;
-
-- (void)downloadTorrentOrMagnetURLAtPath:(NSString *)path :(void(^)(PKTransfer *transfer))onComplete;
-- (void)requestDeletionForDisplayItemID:(NSString *)itemID :(void(^)(id userInfoObject))onComplete;
+//- (void)getFolder:(PKFolder *)folder :(void(^)(id userInfoObject))onComplete;
+//
+//- (void)getMP4InfoForFile:(PKFile *)file :(void(^)(id userInfoObject))onComplete;
+//- (void)requestMP4ForFile:(PKFile *)file;
+//
+//- (void)getTransfers:(void(^)(NSArray *transfers))onComplete;
+//
+//- (void)downloadTorrentOrMagnetURLAtPath:(NSString *)path :(void(^)(PKTransfer *transfer))onComplete;
+//- (void)requestDeletionForDisplayItemID:(NSString *)itemID :(void(^)(id userInfoObject))onComplete;
 @end

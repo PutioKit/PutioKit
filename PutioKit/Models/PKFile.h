@@ -44,6 +44,9 @@
 /** Name of file. */
 @property (strong, nonatomic) NSString *name;
 
+/** A de-[WAREZ](Grouped)NAME.zip of file. */
+@property (strong, nonatomic) NSString *displayName;
+
 /** URL string of screenshot of file. */
 @property (strong, nonatomic) NSString *screenshot;
 
@@ -67,5 +70,13 @@
 
 /** File size in bytes. */
 @property (strong, nonatomic) NSNumber *size;
+
+
++ (NSString *)createDisplayNameFromName:(NSString *)fullName;
+
+- (NSString *)extension;
+- (BOOL)hasPreviewThumbnail;
+- (BOOL)isTextualType;
+- (BOOL)isAudioType;
 
 @end
