@@ -9,6 +9,12 @@
 #import "PutioKit.h"
 #import "AFNetworking.h"
 
+// The v2 API uses is an AFHTTPClient, which does all networking and JSON parsing
+// presenting PKObject subclasses as arguments to onComplete blocks.
+
+// For networking issues we just pass on the AFNetworking NSErrors, they're more
+// detailed and there's no point re-inventing the wheel.
+
 @interface V2PutIOAPIClient : AFHTTPClient
 
 + (id)setup;
@@ -26,7 +32,7 @@
 
 - (void)requestDeletionForDisplayItem:(NSObject <PKFolderItem> *)item :(void(^)(id userInfoObject))onComplete failure:(void (^)(NSError *error))failure;
 
-- (void)requestMP4ForFile:(PKFile *)file failure:(void (^)(NSError *error))failure;
+- (void)requestMP4ForFile:(PKFile *)file :(void(^)())onComplete failure:(void (^)(NSError *error))failure;
 
 - (void)requestTorrentOrMagnetURLAtPath:(NSString *)path :(void(^)(id userInfoObject))onComplete failure:(void (^)(NSError *error))failure;
 

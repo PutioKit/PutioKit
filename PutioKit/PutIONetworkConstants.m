@@ -22,3 +22,5 @@ NSString *const PKAppOAuthCallback = @"puttio://callback";
 NSString *const PKAppAuthTokenDefault = @"AppAuthToken";
 NSString *const PKAPIKeyDefault = @"APIKeyDefault";
 NSString *const PKAPISecretDefault = @"APISecretDefault";
+
+NSString *const PKAppAuthTokenUpdatedNotification = @"PKAppAuthTokenUpdatedNotification";

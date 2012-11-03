@@ -20,9 +20,14 @@
                           
     if (api) {
         [api registerHTTPOperationClass:[AFJSONRequestOperation class]];
-        api.apiToken = [[NSUserDefaults standardUserDefaults] objectForKey:PKAppAuthTokenDefault];
+        [[NSNotificationCenter defaultCenter] addObserver:api selector:@selector(updateAPIToken) name:PKAppAuthTokenUpdatedNotification object:nil];
+        [api updateAPIToken];
     }
     return api;
+}
+
+- (void)updateAPIToken {
+    self.apiToken = [[NSUserDefaults standardUserDefaults] objectForKey:PKAppAuthTokenDefault];
 }
 
 // When is the app connected already
@@ -125,11 +130,11 @@
    }];
 }
 
-- (void)requestMP4ForFile:(PKFile *)file failure:(void (^)(NSError *error))failure {
+#warning return value
+- (void)requestMP4ForFile:(PKFile *)file :(void(^)())onComplete failure:(void (^)(NSError *error))failure {
     NSString *path = [NSString stringWithFormat:@"/v2/files/%@/mp4?oauth_token=%@", file.id, self.apiToken];
     [self postPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"requested MP4 for %@", file.name);
-        
+        onComplete();
     }
     failure:^(AFHTTPRequestOperation *operation, NSError *error) {
        NSLog(@"failure in requesting MP4 %@", error);

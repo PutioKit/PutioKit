@@ -9,19 +9,20 @@
 #import "PutioKit.h"
 #import "AFHTTPClient.h"
 
+// This is where the bulk of the API is presented to app developers.
+// This class forwards most of it's methods to it's v2API which
+//  does the majority of the real work.
+
 @interface PutIOClient : AFHTTPClient
 
 + (PutIOClient *)createSharedClientWithAppSecret:(NSString *)secret;
 + (PutIOClient *)sharedClient;
 
 - (BOOL)ready;
-- (void)startup;
 
 @property NSString *clientID;
 @property NSString *clientSecret;
 @property NSString *appOAuthID;
-
-+ (NSString *)appendOauthToken:(NSString *)inputURL;
 
 - (void)getAccount:(void(^)(PKAccount *account))onComplete failure:(void (^)(NSError *error))failure;
 - (void)getFolderItems:(PKFolder *)folder :(void(^)(NSArray *filesAndFolders))onComplete onFailure:(void (^)(NSError *))failure;
@@ -32,7 +33,7 @@
 
 - (void)requestDeletionForDisplayItem:(NSObject <PKFolderItem> *)item :(void(^)(id userInfoObject))onComplete failure:(void (^)(NSError *error))failure;
 
-- (void)requestMP4ForFile:(PKFile *)file failure:(void (^)(NSError *error))failure;
+- (void)requestMP4ForFile:(PKFile *)file :(void(^)())onComplete failure:(void (^)(NSError *error))failure;
 
 - (void)requestTorrentOrMagnetURLAtPath:(NSString *)path :(void(^)(id userInfoObject))onComplete failure:(void (^)(NSError *error))failure;
 

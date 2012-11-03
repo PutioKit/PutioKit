@@ -63,13 +63,13 @@ static PutIOClient *_sharedClient = nil;
         failure(error);
     }];
 }
-- (void)getMP4InfoForFile:(PKFile *)file :(void(^)(id userInfoObject))onComplete failure:(void (^)(NSError *error))failure {
-    [self.v2Client getMP4InfoForFile:file :^(id userInfoObject) {
 
+- (void)getMP4InfoForFile:(PKFile *)file :(void(^)(id userInfoObject))onComplete failure:(void (^)(NSError *error))failure {
+    [self.v2Client getMP4InfoForFile:(PKFile *)file :^(PKMP4Status *status) {
+        onComplete(file);
     } failure:^(NSError *error) {
-        
+        failure(error);
     }];
-    
 }
 
 - (void)getTransfers:(void(^)(NSArray *transfers))onComplete failure:(void (^)(NSError *error))failure {
@@ -89,8 +89,6 @@ static PutIOClient *_sharedClient = nil;
     }];
 }
 
-//- (void)requestMP4ForFile:(PKFile *)file failure:(void (^)(NSError *error))failure;
-
 - (void)requestTorrentOrMagnetURLAtPath:(NSString *)path :(void(^)(id userInfoObject))onComplete failure:(void (^)(NSError *error))failure {
     [self.v2Client requestTorrentOrMagnetURLAtPath:path :^(id userInfoObject) {
         onComplete(userInfoObject);
@@ -99,6 +97,12 @@ static PutIOClient *_sharedClient = nil;
     }];
 }
 
-
+- (void)requestMP4ForFile:(PKFile *)file :(void(^)())onComplete failure:(void (^)(NSError *error))failure {
+    [self.v2Client requestMP4ForFile:file :^{
+        onComplete();
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
 
 @end

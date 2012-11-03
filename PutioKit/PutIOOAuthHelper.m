@@ -70,8 +70,7 @@
         NSString *appAuthToken = [JSON valueForKeyPath:@"access_token"];
         [[NSUserDefaults standardUserDefaults] setObject:appAuthToken forKey:PKAppAuthTokenDefault];
         [[NSUserDefaults standardUserDefaults] synchronize];
-
-#warning notification
+        [[NSNotificationCenter defaultCenter] postNotificationName:PKAppAuthTokenUpdatedNotification object:nil];
 
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
         NSLog(@"error %@", error);
