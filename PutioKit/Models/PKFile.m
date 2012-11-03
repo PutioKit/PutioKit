@@ -56,6 +56,10 @@ static NSArray *AudioFileTypes;
     return object;
 }
 
+- (NSString *)description {
+    return [NSString stringWithFormat:@"%@ (%@): %@", NSStringFromClass([self class]), self.id.stringValue, self.displayName];
+}
+
 + (NSString *)createDisplayNameFromName:(NSString *)fullName {
     NSString *display = fullName;
 

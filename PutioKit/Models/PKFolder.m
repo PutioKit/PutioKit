@@ -27,4 +27,9 @@
     return object;
 }
 
+- (NSString *)description {
+    return [NSString stringWithFormat:@"%@ (%@): %@", NSStringFromClass([self class]), self.id, self.displayName];
+}
+
+
 @end

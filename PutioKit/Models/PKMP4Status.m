@@ -20,6 +20,7 @@
         }
         else if ([statusType isEqualToString:@"CONVERTING"]) {
             status.mp4Status = PKMP4StatusConverting;
+            status.progress = @( [dictionary[@"mp4"][@"percent_done"] floatValue] / 100 );
         }
         else if ([statusType isEqualToString:@"IN_QUEUE"]) {
             status.mp4Status = PKMP4StatusQueued;
@@ -27,11 +28,12 @@
         else {
             status.mp4Status = PKMP4StatusUnknown;
         }
-
-        status.progress = @( [dictionary[@"mp4"][@"percent_done"] floatValue] / 100 );
-
     }
     return status;
+}
+
+- (NSString *)description {
+    return [NSString stringWithFormat:@"%@ : %i", NSStringFromClass([self class]), self.mp4Status];
 }
 
 @end

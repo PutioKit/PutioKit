@@ -30,4 +30,9 @@
 
 @implementation PKFriend
 
+- (NSString *)description {
+    return [NSString stringWithFormat:@"%@ : %@", NSStringFromClass([self class]), self.name];
+}
+
+
 @end
