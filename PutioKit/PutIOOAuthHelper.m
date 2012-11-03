@@ -6,6 +6,7 @@
 //  Copyright (c) 2012 ortatherox.com. All rights reserved.
 //
 
+#import "PutIOClient.h"
 #import "PutIOOAuthHelper.h"
 #import "AFNetworking.h"
 #import "PutIONetworkConstants.h"
@@ -39,7 +40,8 @@
 }
 
 - (void)loadAuthPage {
-    NSString *address = [NSString stringWithFormat:PTFormatOauthLoginURL, AppOAuthID, AppOAuthCallback];
+    
+    NSString *address = [NSString stringWithFormat:PKFormatOauthLoginURL, [PutIOClient sharedClient].appOAuthID, PKAppOAuthCallback];
     NSURL * url = [NSURL URLWithString:address];
     [_webView loadRequest:[NSURLRequest requestWithURL:url]];
 }
@@ -49,7 +51,7 @@
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {    
     // after you log in, it redrects to root, we actually want it 
-    if ([[request.URL absoluteString] isEqualToString: PTRootURL] ||
+    if ([[request.URL absoluteString] isEqualToString:PKRootURL] ||
         [[request.URL absoluteString] hasPrefix: @"https://put.io/search"]) {
         [self loadAuthPage];
         return NO;
@@ -59,20 +61,19 @@
 
 - (void)getAccessTokenFromOauthCode:(NSString *)code {
     // https://api.put.io/v2/oauth2/access_token?client_id=YOUR_CLIENT_ID&client_secret=YOUR_CLIENT_SECRET&grant_type=authorization_code&redirect_uri=YOUR_REGISTERED_REDIRECT_URI&code=CODE
-    //
-    NSString *address = [NSString stringWithFormat:PTFormatOauthTokenURL, @"10", APP_SECRET, @"authorization_code", PTCallbackOriginal, code];
+
+    NSString *address = [NSString stringWithFormat:PTFormatOauthTokenURL, [PutIOClient sharedClient].clientID, [PutIOClient sharedClient].clientSecret, @"authorization_code", PKCallbackOriginal, code];
 
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:address]];
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
 
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        [defaults setObject:[JSON valueForKeyPath:@"access_token"] forKey:PKAppAuthTokenDefault];
-        [defaults synchronize];
-        [[NSNotificationCenter defaultCenter] postNotificationName:OAuthTokenWasSavedNotification object:nil userInfo:nil];
+        NSString *appAuthToken = [JSON valueForKeyPath:@"access_token"];
+        [[NSUserDefaults standardUserDefaults] setObject:appAuthToken forKey:PKAppAuthTokenDefault];
+        [[NSUserDefaults standardUserDefaults] synchronize];
 
-        [self.delegate authHelperDidLogin:self];
+#warning notification
 
-    }failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
         NSLog(@"error %@", error);
     }];
     [operation start];
@@ -83,14 +84,14 @@
         NSString *code = [error userInfo][@"NSErrorFailingURLStringKey"];
         NSArray *URLComponents = [code componentsSeparatedByString:@"%3D"];
         
-        if (URLComponents.count > 1 && [code hasPrefix: PTCallbackModified]) {            
+        if (URLComponents.count > 1 && [code hasPrefix: PKCallbackModified]) {
             [self getAccessTokenFromOauthCode:URLComponents[1]];
         }
     }else{
         if (error.code == 102 || error.code == -999) {
             // no-op as the puttio:// url causes both errors 101/102
         }else if (error.code == -1009) {
-            [self.delegate authHelperLoginFailedWithDescription:[NSString stringWithFormat:@"Your %@ is currently offline.", [UIDevice deviceString]]];
+            [self.delegate authHelperLoginFailedWithDescription:@"You are curretly offline."];
         }else {
             // actually unexpected
             [self.delegate authHelperHasDeclaredItScrewed];

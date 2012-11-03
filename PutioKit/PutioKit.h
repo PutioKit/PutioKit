@@ -30,6 +30,7 @@
 #import "PKFile.h"
 #import "PKFolder.h"
 
+#import "PKMP4Status.h"
 #import "PKTransfer.h"
 #import "PKAccount.h"
 #import "PKAccountSettings.h"

@@ -11,24 +11,23 @@
 
 @interface V2PutIOAPIClient : AFHTTPClient
 
-@property NSString *apiToken;
-@property NSString *clientID;
-@property NSString *clientSecret;
-@property NSString *appOAuthID;
-
 + (id)setup;
 - (BOOL)ready;
 
-- (void)getAccount:(void(^)(PKAccount *account))onComplete failure:(void (^)(NSError *error))failure;
+@property NSString *apiToken;
 
-//- (void)getFolder:(Folder *)folder :(void(^)(id userInfoObject))onComplete;
-//- (void)getInfoForFile:(File *)file :(void(^)(id userInfoObject))onComplete;
-//
-//- (void)getMP4InfoForFile:(File *)file :(void(^)(id userInfoObject))onComplete;
-//- (void)requestMP4ForFile:(File *)file;
-//
-//- (void)getTransfers:(void(^)(id userInfoObject))onComplete;
-//
-//- (void)requestDeletionForDisplayItemID:(NSString *)itemID :(void(^)(id userInfoObject))onComplete;
-//- (void)downloadTorrentOrMagnetURLAtPath:(NSString *)path :(void(^)(id userInfoObject))onComplete;
+- (void)getAccount:(void(^)(PKAccount *account))onComplete failure:(void (^)(NSError *))failure;
+
+- (void)getFolderItems:(PKFolder *)folder :(void(^)(NSArray *filesAndFolders))onComplete failure:(void (^)(NSError *))failure;
+- (void)getAdditionalInfoForFile:(PKFile *)file :(void(^)())onComplete failure:(void (^)(NSError *error))failure;
+- (void)getMP4InfoForFile:(PKFile *)file :(void(^)(PKMP4Status *status))onComplete failure:(void (^)(NSError *error))failure;
+
+- (void)getTransfers:(void(^)(NSArray *transfers))onComplete failure:(void (^)(NSError *error))failure;
+
+- (void)requestDeletionForDisplayItem:(NSObject <PKFolderItem> *)item :(void(^)(id userInfoObject))onComplete failure:(void (^)(NSError *error))failure;
+
+- (void)requestMP4ForFile:(PKFile *)file failure:(void (^)(NSError *error))failure;
+
+- (void)requestTorrentOrMagnetURLAtPath:(NSString *)path :(void(^)(id userInfoObject))onComplete failure:(void (^)(NSError *error))failure;
+
 @end

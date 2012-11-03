@@ -10,5 +10,6 @@
 @interface PKObject : NSObject
 
 + (id)objectWithDictionary:(NSDictionary *)dictionary;
+- (void)updateObjectWithDictionary:(NSDictionary *)dictionary;
 
 @end

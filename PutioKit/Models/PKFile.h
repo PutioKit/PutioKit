@@ -27,6 +27,7 @@
 //
 
 #import "PKObject.h"
+@class PKFolder;
 
 /**
  This class provides a PKObject subclass in type of PKFile.
@@ -70,6 +71,9 @@
 
 /** File size in bytes. */
 @property (strong, nonatomic) NSNumber *size;
+
+/** Folder containing the File. */
+@property (strong, nonatomic) PKFolder *folder;
 
 
 + (NSString *)createDisplayNameFromName:(NSString *)fullName;

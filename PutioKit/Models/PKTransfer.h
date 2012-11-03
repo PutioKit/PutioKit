@@ -28,14 +28,20 @@
 
 #import "PKObject.h"
 
+typedef enum {
+    PKTransferStatusOK,
+    PKTransferStatusERROR
+} PKTransferStatus;
+
 /**
  This class provides a PKObject subclass in type of PKTransfer.
  */
 @interface PKTransfer : PKObject
 
+
 /**---------------------------------------------------------------------------------------
  * @name Properties
- *  ---------------------------------------------------------------------------------------
+ *  --------------------------------------------------------------------------------------
  */
 
 /** Uploaded size of file in bytes. */
@@ -109,5 +115,7 @@
 
 /** Parent folder id which file will be saved in. */
 @property (strong, nonatomic) NSNumber *saveParentID;
+
+@property (assign) PKTransferStatus transferStatus;
 
 @end

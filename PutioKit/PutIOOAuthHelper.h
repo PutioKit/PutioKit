@@ -6,6 +6,8 @@
 //  Copyright (c) 2012 ortatherox.com. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
+
 @class PutIOOAuthHelper;
 @protocol PutIOOAuthHelperDelegate <NSObject>
 - (void)authHelperDidLogin:(PutIOOAuthHelper *)helper;
