@@ -25,7 +25,7 @@
 @property NSString *appOAuthID;
 
 - (void)getAccount:(void(^)(PKAccount *account))onComplete failure:(void (^)(NSError *error))failure;
-- (void)getFolderItems:(PKFolder *)folder :(void(^)(NSArray *filesAndFolders))onComplete onFailure:(void (^)(NSError *))failure;
+- (void)getFolderItems:(PKFolder *)folder :(void(^)(NSArray *filesAndFolders))onComplete failure:(void (^)(NSError *error))failure;
 - (void)getAdditionalInfoForFile:(PKFile *)file :(void(^)())onComplete failure:(void (^)(NSError *error))failure;
 - (void)getMP4InfoForFile:(PKFile *)file :(void(^)(id userInfoObject))onComplete failure:(void (^)(NSError *error))failure;
 
