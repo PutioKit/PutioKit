@@ -18,68 +18,43 @@
     return object;
 }
 
+// This only supports one level of incursion.
 - (void)updateObjectWithDictionary:(NSDictionary *)dictionary {
+    [self setValuesForKeysWithDictionary:[self camelCaseDictionary:dictionary]];
+}
+
+- (NSDictionary *)camelCaseDictionary:(NSDictionary *)dictionary {
+    NSMutableDictionary *copy = [NSMutableDictionary dictionary];
+
     for (id key in dictionary.allKeys) {
-        // Test for a property with that key
-
         if ([key isKindOfClass:[NSString class]]) {
-            SEL propertySelector = [self underscoredStringtoPropertySelector:key];
-            SEL setPropertySelector = [self propertySelectorToSetPropertySelector:propertySelector];
+            NSString *stringKey = key;
+            NSArray *underscoredComponents = [stringKey componentsSeparatedByString:@"_"];
+            NSMutableString *camelCaseKey = [NSMutableString string];
 
-            if ([self respondsToSelector:propertySelector] && [self respondsToSelector:setPropertySelector]) {
+            // if there's no underscores we've got the right
+            // property name anyway
 
-                // The following line has a warning due to ARC not knowing whether
-                // to retain the return value of it, as we don't use the
-                // return value we can ditch it.
-
-                #pragma clang diagnostic push
-                #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-                [self performSelector:setPropertySelector withObject:dictionary[key]];
-                #pragma clang diagnostic pop
-            }
-        }
-
-        // Recurse if it's a dictionary
-        if ([dictionary[key] isKindOfClass:[NSDictionary dictionary]]) {
-            [self updateObjectWithDictionary:dictionary[key]];
-        }
-
-    }
-}
-
-- (SEL)underscoredStringtoPropertySelector:(NSString *)rubyCase {
-    NSArray *underscoredComponents = [rubyCase componentsSeparatedByString:@"_"];
-    NSMutableString *camelCaseSelectorString = [NSMutableString string];
-
-    // if there's no underscores we've got the right
-    // selector name anyway.
-
-    if (underscoredComponents.count == 0) {
-        return NSSelectorFromString(rubyCase);
-    } else {
-
-        // All components need to be uppercase
-        for (NSString *component in underscoredComponents) {
-            if ([underscoredComponents indexOfObject:component] == 0) {
-                [camelCaseSelectorString appendString:component];
-
+            if (underscoredComponents.count == 0) {
+                camelCaseKey = [stringKey mutableCopy];
             } else {
-                NSString *firstLetter = [component substringToIndex:0];
-                [camelCaseSelectorString appendString:[firstLetter uppercaseString]];
-                [camelCaseSelectorString appendString:[component substringFromIndex:1]];
+
+                for (NSString *component in underscoredComponents) {
+                    if ([underscoredComponents indexOfObject:component] == 0) {
+                        [camelCaseKey appendString:component];
+
+                    } else {
+                        NSString *firstLetter = [component substringToIndex:0];
+                        [camelCaseKey appendString:[firstLetter uppercaseString]];
+                        [camelCaseKey appendString:[component substringFromIndex:1]];
+                    }
+                }
             }
+            [copy setValue:dictionary[key] forKey:camelCaseKey];
         }
     }
-    return NSSelectorFromString(camelCaseSelectorString);
-}
-
-- (SEL)propertySelectorToSetPropertySelector:(SEL)propertySelector {
-    NSString *selector = NSStringFromSelector(propertySelector);
-    NSMutableString *setPropertySelector = [NSMutableString stringWithString:@"set"];
-    NSString *firstLetter = [[selector substringToIndex:0] uppercaseString];
-    [setPropertySelector appendFormat:@"%@%@", firstLetter, [selector substringFromIndex:1]];
     
-    return NSSelectorFromString(setPropertySelector);
+    return copy;
 }
 
 
