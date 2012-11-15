@@ -18,15 +18,15 @@
  *  ---------------------------------------------------------------------------------------
  */
 /** ID of folder that downloaded files put in by default. */
-@property (nonatomic) NSNumber *defaultDownloadFolder;
+@property (strong, nonatomic) NSNumber *defaultDownloadFolder;
 
 /** Boolean value that defines user is invisible in sharing page. */
-@property (nonatomic) NSNumber *isInvisible;
+@property (strong, nonatomic) NSNumber *isInvisible;
 
 /** Boolean value that defines "items shared with you" folder is visible or not. */
-@property (nonatomic) NSNumber *hideItemsShared;
+@property (strong, nonatomic) NSNumber *hideItemsShared;
 
 /** Boolean value that defines extraction of downloaded files is enabled by default or not. */
-@property (nonatomic) NSNumber *extractionDefault;
+@property (strong, nonatomic) NSNumber *extractionDefault;
 
 @end
