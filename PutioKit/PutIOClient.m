@@ -30,13 +30,6 @@ static PutIOClient *_sharedClient = nil;
     return _sharedClient;
 }
 
-+ (PutIOClient *)sharedClient {
-    if (!_sharedClient) {
-        @throw [NSException exceptionWithName:NSObjectNotAvailableException reason:@"Class needs to be created with createSharedClientWithAppSecret first." userInfo:nil];
-    }
-    return _sharedClient;
-}
-
 + (NSString *)appendOauthToken:(NSString *)string {
     NSString *token = [[NSUserDefaults standardUserDefaults] objectForKey:PKAppAuthTokenDefault];
     return [NSString stringWithFormat:@"%@?oauth_token=%@", string, token];
