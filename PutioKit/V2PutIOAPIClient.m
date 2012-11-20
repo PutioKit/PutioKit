@@ -16,7 +16,7 @@
 @implementation V2PutIOAPIClient
 
 + (id)setup {
-    V2PutIOAPIClient *api = [[V2PutIOAPIClient alloc] initWithBaseURL:[NSURL URLWithString:@"https://api.put.io/"]];
+    V2PutIOAPIClient *api = [[V2PutIOAPIClient alloc] initWithBaseURL:[NSURL URLWithString:PKAPIRootURL]];
                           
     if (api) {
         [api registerHTTPOperationClass:[AFJSONRequestOperation class]];

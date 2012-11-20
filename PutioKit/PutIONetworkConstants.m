@@ -9,6 +9,8 @@
 NSString *const PKCallbackOriginal = @"puttio://callback";
 NSString *const PKCallbackModified = @"puttio://callback/%3Fcode";
 
+NSString *const PKAPIRootURL = @"https://api.put.io/";
+
 NSString *const PKRootURL = @"https://put.io/";
 NSString *const PKSettingsURL = @"https://put.io/user/settings";
 NSString *const PTLoginURL = @"https://put.io/?login=1";

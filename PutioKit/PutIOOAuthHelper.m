@@ -25,10 +25,19 @@
     NSString *_password;
     BOOL _attemptedLogin;
 }
-
 @end
 
 @implementation PutIOOAuthHelper
+
+- (PutIOOAuthHelper *)initWithClientID:(NSString *)clientID secret:(NSString *)secret andOAuthID:(NSString *)oAuthID {
+    self = [super init];
+    if (self) {
+        _clientID = clientID;
+        _clientSecret = secret;
+        _appOAuthID = oAuthID;
+    }
+    return self;
+}
 
 - (void)loginWithUsername:(NSString *)username andPassword:(NSString *)password {
     _webView.delegate = self;
@@ -41,7 +50,7 @@
 
 - (void)loadAuthPage {
     
-    NSString *address = [NSString stringWithFormat:PKFormatOauthLoginURL, [PutIOClient sharedClient].appOAuthID, PKAppOAuthCallback];
+    NSString *address = [NSString stringWithFormat:PKFormatOauthLoginURL, _appOAuthID, PKAppOAuthCallback];
     NSURL * url = [NSURL URLWithString:address];
     [_webView loadRequest:[NSURLRequest requestWithURL:url]];
 }
@@ -62,7 +71,7 @@
 - (void)getAccessTokenFromOauthCode:(NSString *)code {
     // https://api.put.io/v2/oauth2/access_token?client_id=YOUR_CLIENT_ID&client_secret=YOUR_CLIENT_SECRET&grant_type=authorization_code&redirect_uri=YOUR_REGISTERED_REDIRECT_URI&code=CODE
 
-    NSString *address = [NSString stringWithFormat:PTFormatOauthTokenURL, [PutIOClient sharedClient].clientID, [PutIOClient sharedClient].clientSecret, @"authorization_code", PKCallbackOriginal, code];
+    NSString *address = [NSString stringWithFormat:PTFormatOauthTokenURL, _clientID, _clientSecret, @"authorization_code", PKCallbackOriginal, code];
 
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:address]];
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {

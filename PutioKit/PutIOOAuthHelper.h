@@ -19,6 +19,11 @@
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak) IBOutlet NSObject <PutIOOAuthHelperDelegate> *delegate;
 
+@property NSString *clientID;
+@property NSString *clientSecret;
+@property NSString *appOAuthID;
+
+- (PutIOOAuthHelper *)initWithClientID:(NSString *)clientID secret:(NSString *)secret andOAuthID:(NSString *)oAuthID;
 - (void)loginWithUsername:(NSString *)username andPassword:(NSString *)password;
 - (void)loadAuthPage;
 @end

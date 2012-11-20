@@ -10,6 +10,9 @@
 extern NSString *const PKCallbackOriginal;
 extern NSString *const PKCallbackModified;
 
+// Addresses for the client
+extern NSString *const PKAPIRootURL;
+
 // Website addresses for OAuth Helper
 extern NSString *const PKRootURL;
 extern NSString *const PTLoginURL;

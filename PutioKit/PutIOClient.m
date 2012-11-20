@@ -9,6 +9,7 @@
 #import "PutIOClient.h"
 #import "AFJSONRequestOperation.h"
 #import "V2PutIOAPIClient.h"
+#import "PutIONetworkConstants.h"
 
 @interface PutIOClient ()
 @property V2PutIOAPIClient *v2Client;
@@ -19,7 +20,7 @@
 
 static PutIOClient *_sharedClient = nil;
 
-+ (PutIOClient *)createSharedClientWithAppSecret:(NSString *)secret {
++ (PutIOClient *)sharedClient {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _sharedClient = [[PutIOClient alloc] init];
@@ -36,6 +37,11 @@ static PutIOClient *_sharedClient = nil;
     return _sharedClient;
 }
 
++ (NSString *)appendOauthToken:(NSString *)string {
+    NSString *token = [[NSUserDefaults standardUserDefaults] objectForKey:PKAppAuthTokenDefault];
+    return [NSString stringWithFormat:@"%@?oauth_token=%@", string, token];
+}
+
 - (BOOL)ready {
     return [self.v2Client ready];
 }
@@ -48,7 +54,7 @@ static PutIOClient *_sharedClient = nil;
     }];
 }
 
-- (void)getFolderItems:(PKFolder *)folder :(void(^)(NSArray *filesAndFolders))onComplete onFailure:(void (^)(NSError *error))failure {
+- (void)getFolderItems:(PKFolder *)folder :(void(^)(NSArray *filesAndFolders))onComplete failure:(void (^)(NSError *error))failure {
     [self.v2Client getFolderItems:folder :^(NSArray *filesAndFolders) {
         onComplete(filesAndFolders);
     } failure:^(NSError *error) {

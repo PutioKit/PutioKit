@@ -17,12 +17,9 @@
 
 + (PutIOClient *)createSharedClientWithAppSecret:(NSString *)secret;
 + (PutIOClient *)sharedClient;
++ (NSString *)appendOauthToken:(NSString *)string;
 
 - (BOOL)ready;
-
-@property NSString *clientID;
-@property NSString *clientSecret;
-@property NSString *appOAuthID;
 
 - (void)getAccount:(void(^)(PKAccount *account))onComplete failure:(void (^)(NSError *error))failure;
 - (void)getFolderItems:(PKFolder *)folder :(void(^)(NSArray *filesAndFolders))onComplete failure:(void (^)(NSError *error))failure;
