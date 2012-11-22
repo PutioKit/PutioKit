@@ -23,6 +23,7 @@
     [self setValuesForKeysWithDictionary:[self camelCaseDictionary:dictionary]];
 }
 
+
 - (NSDictionary *)camelCaseDictionary:(NSDictionary *)dictionary {
     NSMutableDictionary *copy = [NSMutableDictionary dictionary];
 
@@ -44,18 +45,31 @@
                         [camelCaseKey appendString:component];
 
                     } else {
-                        NSString *firstLetter = [component substringToIndex:0];
+                        NSString *firstLetter = [component substringToIndex:1];
                         [camelCaseKey appendString:[firstLetter uppercaseString]];
                         [camelCaseKey appendString:[component substringFromIndex:1]];
                     }
                 }
             }
-            [copy setValue:dictionary[key] forKey:camelCaseKey];
+
+            if ([self respondsToSelector:[self setSelectorForString:camelCaseKey]]) {
+                [copy setValue:dictionary[key] forKey:camelCaseKey];
+            }
         }
     }
     
     return copy;
 }
 
+- (SEL)setSelectorForString:(NSString *)string {
+    NSMutableString *selector = [@"set" mutableCopy];
+
+    NSString *firstLetter = [string substringToIndex:1];
+    [selector appendString:[firstLetter uppercaseString]];
+    [selector appendString:[string substringFromIndex:1]];
+    [selector appendString:@":"];
+
+    return NSSelectorFromString(selector);
+}
 
 @end
