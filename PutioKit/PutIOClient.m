@@ -96,9 +96,9 @@ static PutIOClient *_sharedClient = nil;
     }];
 }
 
-- (void)requestMP4ForFile:(PKFile *)file :(void(^)())onComplete failure:(void (^)(NSError *error))failure {
-    [self.v2Client requestMP4ForFile:file :^{
-        onComplete();
+- (void)requestMP4ForFile:(PKFile *)file :(void(^)(PKMP4Status *status))onComplete failure:(void (^)(NSError *error))failure {
+    [self.v2Client requestMP4ForFile:file :^(PKMP4Status *status) {
+        onComplete(status);
     } failure:^(NSError *error) {
         failure(error);
     }];

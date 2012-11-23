@@ -15,7 +15,6 @@
 
 @interface PutIOClient : AFHTTPClient
 
-+ (PutIOClient *)createSharedClientWithAppSecret:(NSString *)secret;
 + (PutIOClient *)sharedClient;
 + (NSString *)appendOauthToken:(NSString *)string;
 
@@ -33,7 +32,7 @@
 
 - (void)requestDeletionForDisplayItem:(NSObject <PKFolderItem> *)item :(void(^)(id userInfoObject))onComplete failure:(void (^)(NSError *error))failure;
 
-- (void)requestMP4ForFile:(PKFile *)file :(void(^)())onComplete failure:(void (^)(NSError *error))failure;
+- (void)requestMP4ForFile:(PKFile *)file :(void(^)(PKMP4Status *status))onComplete failure:(void (^)(NSError *error))failure;
 
 - (void)requestTorrentOrMagnetURLAtPath:(NSString *)path :(void(^)(id userInfoObject))onComplete failure:(void (^)(NSError *error))failure;
 

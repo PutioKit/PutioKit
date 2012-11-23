@@ -116,6 +116,9 @@
     }];
 }
 
+#pragma mark -
+#pragma mark Requests
+
 - (void)requestDeletionForDisplayItem:(NSObject <PKFolderItem> *)item :(void(^)(id userInfoObject))onComplete failure:(void (^)(NSError *error))failure {
     NSString *path = [NSString stringWithFormat:@"/v2/files/delete?oauth_token=%@", self.apiToken];
     NSDictionary *params = @{ @"file_ids": item.id };
@@ -130,11 +133,12 @@
    }];
 }
 
-#warning no return value
-- (void)requestMP4ForFile:(PKFile *)file :(void(^)())onComplete failure:(void (^)(NSError *error))failure {
+- (void)requestMP4ForFile:(PKFile *)file :(void(^)(PKMP4Status *status))onComplete failure:(void (^)(NSError *error))failure {
     NSString *path = [NSString stringWithFormat:@"/v2/files/%@/mp4?oauth_token=%@", file.id, self.apiToken];
     [self postPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        onComplete();
+        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil];
+        PKMP4Status *status = [PKMP4Status objectWithDictionary:json];
+        onComplete(status);
     }
     failure:^(AFHTTPRequestOperation *operation, NSError *error) {
        NSLog(@"failure in requesting MP4 %@", error);
