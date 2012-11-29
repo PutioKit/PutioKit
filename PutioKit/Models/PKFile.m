@@ -30,6 +30,9 @@ static NSArray *AudioFileTypes;
     if (object) {
         object.isMP4Available = @( [dictionary[@"is_mp4_available"] boolValue] );
         object.parentID = @( [dictionary[@"parend_id"] boolValue] );
+
+#warning look at this!
+        object.screenshotURL = dictionary[@"icon"];
     }
     object.displayName = [self createDisplayNameFromName:object.name];
 
@@ -48,7 +51,7 @@ static NSArray *AudioFileTypes;
         NSRange range = [display rangeOfString:@"^\\s*" options:NSRegularExpressionSearch];
         display = [display stringByReplacingCharactersInRange:range withString:@""];
 
-        // remove prefix brackets - usually group names
+        // remove prefix brackets ( and their contents ) - usually release group names
         NSArray *prefixOpeners = @[@"[", @"{", @"("];
         NSArray *prefixClosers = @[@"]", @"}", @")"];
         for (int i = 0; i < prefixClosers.count; i++) {
@@ -60,6 +63,7 @@ static NSArray *AudioFileTypes;
         display = [display lowercaseString];
         display = [display stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"[]{}()"]];
 
+        // Purge more keywords
         NSArray *removeStrings = @[@".", @"_", @" 5 1aac ", @" 5.1aac ", @" dvdrip ", @" brrip ", @" x264 ", @" hdtv ", @" 720 ", @" 1080 ", @" 480 ", @" wmv", @" mp4", @" m4v", @" mkv", @" hd ", @" 720p ", @" avi ", @" dvdscr ", @" 1080p ", @" avi"];
         for (NSString *remove in removeStrings) {
             display = [display stringByReplacingOccurrencesOfString:remove withString:@" "];
@@ -88,6 +92,5 @@ static NSArray *AudioFileTypes;
 - (BOOL)hasPreviewThumbnail {
     return [ThumbnailFileTypes containsObject:[self extension]];
 }
-
 
 @end

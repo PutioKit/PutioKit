@@ -16,12 +16,12 @@
 @end
 
 @interface PutIOOAuthHelper : NSObject <UIWebViewDelegate>
-@property (weak, nonatomic) IBOutlet UIWebView *webView;
+@property (weak) IBOutlet UIWebView *webView;
 @property (weak) IBOutlet NSObject <PutIOOAuthHelperDelegate> *delegate;
 
-@property NSString *clientID;
-@property NSString *clientSecret;
-@property NSString *appOAuthID;
+@property (strong) NSString *clientID;
+@property (strong) NSString *clientSecret;
+@property (strong) NSString *appOAuthID;
 
 - (PutIOOAuthHelper *)initWithClientID:(NSString *)clientID secret:(NSString *)secret andOAuthID:(NSString *)oAuthID;
 - (void)loginWithUsername:(NSString *)username andPassword:(NSString *)password;

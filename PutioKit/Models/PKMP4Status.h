@@ -17,7 +17,10 @@ typedef enum {
 
 @interface PKMP4Status : PKObject
 
-@property PKMP4StatusType mp4Status;
-@property NSNumber *progress;
+/** Status of MP4. */
+@property (assign, nonatomic) PKMP4StatusType mp4Status;
+
+/** Progress is status is currently converting. */
+@property (strong, nonatomic) NSNumber *progress;
 
 @end
