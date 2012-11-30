@@ -25,6 +25,9 @@
         else if ([statusType isEqualToString:@"IN_QUEUE"]) {
             status.mp4Status = PKMP4StatusQueued;
         }
+        else if ([statusType isEqualToString:@"NOT_AVAILABLE"]) {
+            status.mp4Status = PKMp4StatusNotAvailable;
+        }
         else {
             status.mp4Status = PKMP4StatusUnknown;
         }
