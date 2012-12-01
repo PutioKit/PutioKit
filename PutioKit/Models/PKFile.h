@@ -47,7 +47,7 @@
 @property (strong, nonatomic) NSString *icon;
 
 /** ID of file. */
-@property (strong, nonatomic) NSNumber *id;
+@property (strong, nonatomic) NSString *id;
 
 /** File size in bytes. */
 @property (strong, nonatomic) NSNumber *size;

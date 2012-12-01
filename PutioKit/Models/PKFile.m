@@ -30,8 +30,7 @@ static NSArray *AudioFileTypes;
     if (object) {
         object.isMP4Available = @( [dictionary[@"is_mp4_available"] boolValue] );
         object.parentID = @( [dictionary[@"parend_id"] boolValue] );
-
-#warning look at this!
+        object.id = [(NSNumber *)object.id stringValue];
         object.screenshotURL = dictionary[@"icon"];
     }
     object.displayName = [self createDisplayNameFromName:object.name];

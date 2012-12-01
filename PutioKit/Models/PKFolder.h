@@ -31,6 +31,7 @@
 
 /** Collection of PKFiles and PKFolders held in folder */
 @property (strong) NSSet *items;
+
 - (NSArray *)orderedItems;
 
 @end

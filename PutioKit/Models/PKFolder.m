@@ -23,6 +23,7 @@
         object.screenShotURL =  dictionary[@"icon"];
         object.parentID = [dictionary[@"parent_id"] stringValue];
         object.displayName = [PKFile createDisplayNameFromName:object.name];
+        object.id = [(NSNumber *)object.id stringValue];
     }
     return object;
 }
