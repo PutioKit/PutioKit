@@ -29,16 +29,6 @@
 
 @implementation PutIOOAuthHelper
 
-- (PutIOOAuthHelper *)initWithClientID:(NSString *)clientID secret:(NSString *)secret andOAuthID:(NSString *)oAuthID {
-    self = [super init];
-    if (self) {
-        _clientID = clientID;
-        _clientSecret = secret;
-        _appOAuthID = oAuthID;
-    }
-    return self;
-}
-
 - (void)loginWithUsername:(NSString *)username andPassword:(NSString *)password {
     _webView.delegate = self;
     _attemptedLogin = NO;
@@ -49,8 +39,7 @@
 }
 
 - (void)loadAuthPage {
-    
-    NSString *address = [NSString stringWithFormat:PKFormatOauthLoginURL, _appOAuthID, PKAppOAuthCallback];
+    NSString *address = [NSString stringWithFormat:PKFormatOauthLoginURL, _clientID, PKAppOAuthCallback];
     NSURL * url = [NSURL URLWithString:address];
     [_webView loadRequest:[NSURLRequest requestWithURL:url]];
 }
@@ -80,6 +69,7 @@
         [[NSUserDefaults standardUserDefaults] setObject:appAuthToken forKey:PKAppAuthTokenDefault];
         [[NSUserDefaults standardUserDefaults] synchronize];
         [[NSNotificationCenter defaultCenter] postNotificationName:PKAppAuthTokenUpdatedNotification object:nil];
+        [self.delegate authHelperDidLogin:self];
 
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
         NSLog(@"error %@", error);

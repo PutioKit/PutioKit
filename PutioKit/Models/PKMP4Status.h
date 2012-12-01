@@ -12,7 +12,7 @@ typedef enum {
     PKMP4StatusCompleted,
     PKMP4StatusConverting,
     PKMP4StatusQueued,
-    PKMp4StatusNotAvailable,
+    PKMP4StatusNotAvailable,
     PKMP4StatusUnknown
 } PKMP4StatusType;
 
