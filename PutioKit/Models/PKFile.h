@@ -59,6 +59,8 @@
 
 - (NSString *)extension;
 - (BOOL)hasPreviewThumbnail;
+
+- (BOOL)isImageType;
 - (BOOL)isTextualType;
 - (BOOL)isAudioType;
 

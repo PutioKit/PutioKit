@@ -98,4 +98,6 @@ typedef enum {
 
 @property (assign) PKTransferStatus transferStatus;
 
+- (NSString *)displayName;
+
 @end

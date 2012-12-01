@@ -7,6 +7,7 @@
 
 
 #import "PKTransfer.h"
+#import "PKFile.h"
 
 @implementation PKTransfer
 
@@ -28,6 +29,10 @@
 
 - (NSString *)description {
     return [NSString stringWithFormat:@"%@ (%@): %@ - %@", NSStringFromClass([self class]), self.id.stringValue, self.name, self.statusMessage];
+}
+
+- (NSString *)displayName {
+    return [PKFile createDisplayNameFromName:_name];
 }
 
 @end
