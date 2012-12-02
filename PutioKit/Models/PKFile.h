@@ -52,6 +52,9 @@
 /** File size in bytes. */
 @property (strong, nonatomic) NSNumber *size;
 
+/** The hash as a string for the website opensubtitles. */
+@property (strong, nonatomic) NSString *opensubtitlesHash;
+
 /** Folder containing the File. */
 @property (strong, nonatomic) PKFolder *folder;
 

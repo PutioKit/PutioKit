@@ -33,9 +33,9 @@ static NSArray *ImageFileTypes;
         if (dictionary[@"is_mp4_available"] != [NSNull null]) {
             object.isMP4Available = @( [dictionary[@"is_mp4_available"] boolValue] );
         }
+
         object.parentID = [(NSNumber *)dictionary[@"parent_id"] stringValue];
         object.id = [(NSNumber *)object.id stringValue];
-        object.screenshot = dictionary[@"icon"];
         object.displayName = [object.name displayNameString];
     }
 
