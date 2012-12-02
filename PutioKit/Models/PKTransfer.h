@@ -73,7 +73,7 @@ typedef enum {
 @property (strong, nonatomic) NSNumber *downloaded;
 
 /** File id assigned by Put.io. */
-@property (strong, nonatomic) NSNumber *fileID;
+@property (strong, nonatomic) NSString *fileID;
 
 /** Number of peers sending to Put.io. */
 @property (strong, nonatomic) NSNumber *peersSendingToUs;

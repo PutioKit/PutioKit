@@ -17,7 +17,7 @@
     PKTransfer *object = [super objectWithDictionary:dictionary];
     if (object) {
         object.saveParentID = @([dictionary[@"save_parent_id"] intValue]);
-        object.fileID = @([dictionary[@"file_id"] intValue]);
+        object.fileID = dictionary[@"file_id"];
 
         if (dictionary[@"error_message"] != [NSNull null]) {
             object.transferStatus = PKTransferStatusERROR;
