@@ -6,12 +6,14 @@
 //  Copyright (c) 2012 ortatherox.com. All rights reserved.
 //
 
-#import "PutioKit.h"
 #import "AFHTTPClient.h"
+#import "PKFolderItem.h"
 
 // This is where the bulk of the API is presented to app developers.
 // This class forwards most of it's methods to it's v2API which
 //  does the majority of the real work.
+
+@class  PKFile, PKAccount, PKFolder, PKTransfer, PKMP4Status;
 
 @interface PutIOClient : AFHTTPClient
 
