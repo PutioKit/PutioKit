@@ -51,7 +51,7 @@
         @"parent_id": folder.id
     };
 
-    [self genericGetAtPath:@"/vs/files/list" withParams:params :^(id JSON) {
+    [self genericGetAtPath:@"/v2/files/list" withParams:params :^(id JSON) {
 
         NSArray *itemDictionaries = JSON[@"files"];
         NSMutableArray *objects = [NSMutableArray array];
@@ -176,7 +176,7 @@
         onComplete(json);
     }
     failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"request failed %@", operation.request.URL);
+        NSLog(@"request failed %@ (%i)", operation.request.URL, operation.response.statusCode);
         failure(error);
     }];
 }
