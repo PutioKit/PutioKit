@@ -35,7 +35,7 @@
 @property (strong, nonatomic) NSString *createdAt;
 
 /** ID of the parent folder. */
-@property (strong, nonatomic) NSNumber *parentID;
+@property (strong, nonatomic) NSString *parentID;
 
 /** Boolean value to determine is MP4 available. */
 @property (strong, nonatomic) NSNumber *isMP4Available;
