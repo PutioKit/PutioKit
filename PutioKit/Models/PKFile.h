@@ -55,8 +55,6 @@
 /** Folder containing the File. */
 @property (strong, nonatomic) PKFolder *folder;
 
-+ (NSString *)createDisplayNameFromName:(NSString *)fullName;
-
 - (NSString *)extension;
 - (BOOL)hasPreviewThumbnail;
 

@@ -29,6 +29,8 @@
 		60A7C00B15FA8ACA00FEB45E /* PKAccountSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A7C00915FA8ACA00FEB45E /* PKAccountSettings.m */; };
 		60A7C00E15FA941F00FEB45E /* PKFriend.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A7C00D15FA941F00FEB45E /* PKFriend.m */; };
 		60A7C00F15FA941F00FEB45E /* PKFriend.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A7C00D15FA941F00FEB45E /* PKFriend.m */; };
+		60BBA07F166BA26B001FA20A /* NSString+DisplayName.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BBA07E166BA26B001FA20A /* NSString+DisplayName.m */; };
+		60BBA080166BA26B001FA20A /* NSString+DisplayName.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BBA07E166BA26B001FA20A /* NSString+DisplayName.m */; };
 		60DE5BEF1642BAEA00DE850E /* PutIOOAuthHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 60DE5BEE1642BAEA00DE850E /* PutIOOAuthHelper.m */; };
 		60DE5BF61642C05E00DE850E /* PKFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 60DE5BF51642C05E00DE850E /* PKFolder.m */; };
 		60E9B0C2164514450054A1CE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60E9B0C1164514450054A1CE /* UIKit.framework */; };
@@ -91,6 +93,8 @@
 		60A7C00915FA8ACA00FEB45E /* PKAccountSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKAccountSettings.m; sourceTree = "<group>"; };
 		60A7C00C15FA941F00FEB45E /* PKFriend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKFriend.h; sourceTree = "<group>"; };
 		60A7C00D15FA941F00FEB45E /* PKFriend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKFriend.m; sourceTree = "<group>"; };
+		60BBA07D166BA26B001FA20A /* NSString+DisplayName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+DisplayName.h"; path = "Categories/NSString+DisplayName.h"; sourceTree = "<group>"; };
+		60BBA07E166BA26B001FA20A /* NSString+DisplayName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+DisplayName.m"; path = "Categories/NSString+DisplayName.m"; sourceTree = "<group>"; };
 		60DE5BED1642BAEA00DE850E /* PutIOOAuthHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PutIOOAuthHelper.h; sourceTree = "<group>"; };
 		60DE5BEE1642BAEA00DE850E /* PutIOOAuthHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PutIOOAuthHelper.m; sourceTree = "<group>"; };
 		60DE5BF41642C05E00DE850E /* PKFolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKFolder.h; sourceTree = "<group>"; };
@@ -204,6 +208,8 @@
 				60549117163F5CF100E65853 /* Constants */,
 				609E79A4163E323200F85EC4 /* Models */,
 				60A7BFD315FA82A700FEB45E /* Supporting Files */,
+				60BBA07D166BA26B001FA20A /* NSString+DisplayName.h */,
+				60BBA07E166BA26B001FA20A /* NSString+DisplayName.m */,
 			);
 			path = PutioKit;
 			sourceTree = "<group>";
@@ -361,6 +367,7 @@
 				60DE5BEF1642BAEA00DE850E /* PutIOOAuthHelper.m in Sources */,
 				60DE5BF61642C05E00DE850E /* PKFolder.m in Sources */,
 				60E9B0CD164523410054A1CE /* PKMP4Status.m in Sources */,
+				60BBA07F166BA26B001FA20A /* NSString+DisplayName.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,6 +381,7 @@
 				60A7C00F15FA941F00FEB45E /* PKFriend.m in Sources */,
 				6039D03D15FBC8EA00ACA5B4 /* PKTransfer.m in Sources */,
 				6028B7FA15FD08DF002EA5A1 /* PKFile.m in Sources */,
+				60BBA080166BA26B001FA20A /* NSString+DisplayName.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

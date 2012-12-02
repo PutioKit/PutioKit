@@ -8,6 +8,7 @@
 
 #import "PKTransfer.h"
 #import "PKFile.h"
+#import "NSString+DisplayName.h"
 
 @implementation PKTransfer
 
@@ -32,7 +33,7 @@
 }
 
 - (NSString *)displayName {
-    return [PKFile createDisplayNameFromName:_name];
+    return [_name displayNameString];
 }
 
 @end

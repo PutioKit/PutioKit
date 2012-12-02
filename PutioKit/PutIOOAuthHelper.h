@@ -22,7 +22,6 @@
 @property (strong) NSString *clientID;
 @property (strong) NSString *clientSecret;
 
-- (PutIOOAuthHelper *)initWithClientID:(NSString *)clientID secret:(NSString *)secret andOAuthID:(NSString *)oAuthID;
 - (void)loginWithUsername:(NSString *)username andPassword:(NSString *)password;
 - (void)loadAuthPage;
 @end

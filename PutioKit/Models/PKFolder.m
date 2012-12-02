@@ -8,6 +8,7 @@
 
 #import "PKFolder.h"
 #import "PKFile.h"
+#import "NSString+DisplayName.h"
 
 @implementation PKFolder
 
@@ -22,7 +23,7 @@
     if (object) {
         object.screenShotURL =  dictionary[@"icon"];
         object.parentID = [dictionary[@"parent_id"] stringValue];
-        object.displayName = [PKFile createDisplayNameFromName:object.name];
+        object.displayName = [object.name displayNameString];
         object.id = [(NSNumber *)object.id stringValue];
     }
     return object;
