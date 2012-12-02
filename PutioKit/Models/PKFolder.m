@@ -21,7 +21,7 @@
 + (id)objectWithDictionary:(NSDictionary *)dictionary; {
     PKFolder *object = [super objectWithDictionary:dictionary];
     if (object) {
-        object.screenShotURL =  dictionary[@"icon"];
+        object.screenshot =  dictionary[@"icon"];
         object.parentID = [dictionary[@"parent_id"] stringValue];
         object.displayName = [object.name displayNameString];
         object.id = [(NSNumber *)object.id stringValue];

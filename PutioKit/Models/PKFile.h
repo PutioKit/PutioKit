@@ -29,7 +29,7 @@
 @property (strong, nonatomic) NSString *displayName;
 
 /** URL string of screenshot of file. */
-@property (strong, nonatomic) NSString *screenshotURL;
+@property (strong, nonatomic) NSString *screenshot;
 
 /** Creation date of file in iso8601 format. */
 @property (strong, nonatomic) NSString *createdAt;

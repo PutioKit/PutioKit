@@ -24,7 +24,7 @@
 @property (strong) NSString *parentID;
 
 /** Address of the folder's screenshot. */
-@property (strong) NSString *screenShotURL;
+@property (strong) NSString *screenshot;
 
 /** Size of data contained in folder. */
 @property (strong) NSNumber *size;

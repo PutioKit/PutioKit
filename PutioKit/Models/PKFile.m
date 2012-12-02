@@ -35,7 +35,7 @@ static NSArray *ImageFileTypes;
         }
         object.parentID = dictionary[@"parent_id"];
         object.id = [(NSNumber *)object.id stringValue];
-        object.screenshotURL = dictionary[@"icon"];
+        object.screenshot = dictionary[@"icon"];
         object.displayName = [object.name displayNameString];
     }
 
