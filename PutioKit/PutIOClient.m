@@ -79,7 +79,6 @@ static PutIOClient *_sharedClient = nil;
     }];
 }
 
-#warning return value -> object
 - (void)requestDeletionForDisplayItem:(NSObject <PKFolderItem> *)item :(void(^)(id userInfoObject))onComplete failure:(void (^)(NSError *error))failure {
     [self.v2Client requestDeletionForDisplayItem:item :^(id userInfoObject) {
         onComplete(userInfoObject);
@@ -88,10 +87,12 @@ static PutIOClient *_sharedClient = nil;
     }];
 }
 
-- (void)requestTorrentOrMagnetURLAtPath:(NSString *)path :(void(^)(id userInfoObject))onComplete failure:(void (^)(NSError *error))failure {
+- (void)requestTorrentOrMagnetURLAtPath:(NSString *)path :(void(^)(id userInfoObject))onComplete addFailure:(void (^)())onAddFailure networkFailure:(void (^)(NSError *error))failure {
     [self.v2Client requestTorrentOrMagnetURLAtPath:path :^(id userInfoObject) {
         onComplete(userInfoObject);
-    } failure:^(NSError *error) {
+    } addFailure:^{
+        onAddFailure();
+    } networkFailure:^(NSError *error) {
         failure(error);
     }];
 }

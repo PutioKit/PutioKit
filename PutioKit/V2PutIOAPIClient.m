@@ -146,14 +146,17 @@
     }];
 }
 
-- (void)requestTorrentOrMagnetURLAtPath:(NSString *)path :(void(^)(id userInfoObject))onComplete failure:(void (^)(NSError *error))failure{
+- (void)requestTorrentOrMagnetURLAtPath:(NSString *)path :(void(^)(id userInfoObject))onComplete addFailure:(void (^)())onAddFailure networkFailure:(void (^)(NSError *error))failure {
     NSString *address = [NSString stringWithFormat:@"/v2/transfers/add?oauth_token=%@", self.apiToken];
     NSDictionary *params = @{@"url": path};
 
     [self postPath:address parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSDictionary *json = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil];
-        NSLog(@"downloadTorrentOrMagnetURLAtPath completed %@", json);
-        onComplete(json);
+        if ([json[@"status"] isEqualToString:@"ERROR"]) {
+            onAddFailure();
+        } else {
+            onComplete(json);
+        }
     }
     failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"failure in requesting torrent / magnet %@", error);
