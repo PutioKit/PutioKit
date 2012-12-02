@@ -30,7 +30,9 @@ static NSArray *ImageFileTypes;
     PKFile *object = [super objectWithDictionary:dictionary];
 
     if (object) {
-        object.isMP4Available = @( [dictionary[@"is_mp4_available"] boolValue] );
+        if (dictionary[@"is_mp4_available"] != [NSNull null]) {
+            object.isMP4Available = @( [dictionary[@"is_mp4_available"] boolValue] );
+        }
         object.parentID = dictionary[@"parent_id"];
         object.id = [(NSNumber *)object.id stringValue];
         object.screenshotURL = dictionary[@"icon"];
