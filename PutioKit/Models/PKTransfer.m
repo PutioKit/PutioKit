@@ -19,10 +19,22 @@
         object.saveParentID = @([dictionary[@"save_parent_id"] intValue]);
         object.fileID = dictionary[@"file_id"];
 
-        if (dictionary[@"error_message"] != [NSNull null]) {
-            object.transferStatus = PKTransferStatusERROR;
-        }else {
-            object.transferStatus = PKTransferStatusOK;
+        NSString *statusType = dictionary[@"status"];
+        
+        if ([statusType isEqualToString:@"ERROR"]) {
+            object.transferStatus = PKTransferStatusError;
+        }
+        else if ([statusType isEqualToString:@"DOWNLOADING"]) {
+            object.transferStatus = PKTransferStatusDownloading;
+        }
+        else if ([statusType isEqualToString:@"SEEDING"]) {
+            object.transferStatus = PKTransferStatusSeeding;
+        }
+        else if ([statusType isEqualToString:@"COMPLETED"]) {
+            object.transferStatus = PKTransferStatusCompleted;
+        }
+        else {
+            object.transferStatus = PKTransferStatusUnknown;
         }
     }
     return object;
