@@ -79,6 +79,14 @@ static PutIOClient *_sharedClient = nil;
     }];
 }
 
+- (void)cancelTransfer:(PKTransfer *)transfer :(void(^)())onComplete failure:(void (^)(NSError *error))failure {
+    [self.v2Client cancelTransfer:transfer :^{
+        onComplete();
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
+
 - (void)requestDeletionForDisplayItem:(NSObject <PKFolderItem> *)item :(void(^)(id userInfoObject))onComplete failure:(void (^)(NSError *error))failure {
     [self.v2Client requestDeletionForDisplayItem:item :^(id userInfoObject) {
         onComplete(userInfoObject);

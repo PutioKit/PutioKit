@@ -116,6 +116,20 @@
     }];
 }
 
+- (void)cancelTransfer:(PKTransfer *)transfer :(void(^)())onComplete failure:(void (^)(NSError *error))failure {
+    NSString *path = [NSString stringWithFormat:@"/v2/transfers/cancel?oauth_token=%@", self.apiToken];
+    NSDictionary *params = @{ @"transfer_ids": transfer.id };
+
+    [self postPath:path parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        onComplete();
+    }
+     
+    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+       NSLog(@"failure in requesting delete %@", error);
+       failure(error);
+    }];
+}
+
 #pragma mark -
 #pragma mark Requests
 
@@ -127,10 +141,10 @@
         NSDictionary *json = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil];
         onComplete(json);
     }
-   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-       NSLog(@"failure in requesting delete %@", error);
-       failure(error);
-   }];
+    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"failure in requesting delete %@", error);
+        failure(error);
+    }];
 }
 
 - (void)requestMP4ForFile:(PKFile *)file :(void(^)(PKMP4Status *status))onComplete failure:(void (^)(NSError *error))failure {
