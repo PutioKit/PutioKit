@@ -37,7 +37,7 @@
 
 - (void)getAccount:(void(^)(PKAccount *account))onComplete failure:(void (^)(NSError *))failure {
     [self genericGetAtPath:@"/v2/account/info" withParams:nil :^(id JSON) {
-        PKAccount *account = [PKAccount objectWithDictionary:JSON];
+        PKAccount *account = [PKAccount objectWithDictionary:JSON[@"info"]];
         onComplete(account);
 
     } failure:^(NSError *error) {
