@@ -186,11 +186,18 @@
 
     [self getPath:path parameters:requestParams success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSError *error= nil;
+        if (!responseObject) {
+            onComplete(nil);
+            return;
+        }
+
         NSDictionary *json = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:&error];
         if (error) {
             NSLog(@"JSON parsing error in %@", NSStringFromSelector(_cmd));
+            failure(error);
+        } else {
+            onComplete(json);
         }
-        onComplete(json);
     }
     failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"request failed %@ (%i)", operation.request.URL, operation.response.statusCode);
