@@ -138,6 +138,10 @@
     NSDictionary *params = @{ @"file_ids": item.id };
     
     [self postPath:path parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        if (!responseObject) {
+            onComplete(nil);
+            return;
+        }
         NSDictionary *json = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil];
         onComplete(json);
     }
@@ -150,6 +154,10 @@
 - (void)requestMP4ForFile:(PKFile *)file :(void(^)(PKMP4Status *status))onComplete failure:(void (^)(NSError *error))failure {
     NSString *path = [NSString stringWithFormat:@"/v2/files/%@/mp4?oauth_token=%@", file.id, self.apiToken];
     [self postPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        if (!responseObject) {
+            onComplete(nil);
+            return;
+        }
         NSDictionary *json = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil];
         PKMP4Status *status = [PKMP4Status objectWithDictionary:json];
         onComplete(status);
@@ -165,6 +173,10 @@
     NSDictionary *params = @{@"url": path};
 
     [self postPath:address parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        if (!responseObject) {
+            onAddFailure();
+            return;
+        }
         NSDictionary *json = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil];
         if ([json[@"status"] isEqualToString:@"ERROR"]) {
             onAddFailure();
