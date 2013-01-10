@@ -18,7 +18,7 @@
 // Redirect to the OAuth dialog
 // Put in the creds ourselves
 // Get redirected to the "accept the application page" tap via js
-// Then call delegate method.
+// Then call to putio:/ method which is treated as an error.
 
 @interface PutIOOAuthHelper (){
     NSString *_username;
@@ -47,8 +47,9 @@
 #pragma mark -
 #pragma mark Webview delegate methods
 
-- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {    
-    // after you log in, it redrects to root, we actually want it 
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+
+    // After you log in, it redrects to root, we actually want it
     if ([[request.URL absoluteString] isEqualToString:PKRootURL] ||
         [[request.URL absoluteString] hasPrefix: @"https://put.io/search"]) {
         [self loadAuthPage];
@@ -78,18 +79,22 @@
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
+   
     if (error.code == 101) {
         NSString *code = [error userInfo][@"NSErrorFailingURLStringKey"];
-        NSArray *URLComponents = [code componentsSeparatedByString:@"%3D"];
-        
-        if (URLComponents.count > 1 && [code hasPrefix: PKCallbackModified]) {
+        NSArray *URLComponents = [code componentsSeparatedByString:@"="];
+
+        // We've successfully got a code from the callback
+        // now we just need to get the OAuth token
+
+        if (URLComponents.count > 1) {
             [self getAccessTokenFromOauthCode:URLComponents[1]];
         }
     }else{
         if (error.code == 102 || error.code == -999) {
             // no-op as the puttio:// url causes both errors 101/102
         }else if (error.code == -1009) {
-            [self.delegate authHelperLoginFailedWithDescription:@"You are curretly offline."];
+            [self.delegate authHelperLoginFailedWithDescription:@"You are currently offline."];
         }else {
             // actually unexpected
             [self.delegate authHelperHasDeclaredItScrewed];
@@ -99,26 +104,38 @@
 
 - (void)webViewDidFinishLoad:(UIWebView *)aWebView {
     NSString *address = aWebView.request.URL.absoluteString;
+    NSString *loginpath = @"v2/oauth2/login";
+    NSLog(@"%@", address);
     
-    if([address hasPrefix:@"https://put.io/v2/oauth2/login"] && !_attemptedLogin){
+    // Load the Oauth Page, look for the right input boxes then submit the form
+    if([address rangeOfString:loginpath].location != NSNotFound && !_attemptedLogin){
         _attemptedLogin = YES;
-        NSString *setUsername = [NSString stringWithFormat:@"document.getElementsByTagName('input')[0].value = '%@'", _username];
+        NSString *setUsername = [NSString stringWithFormat:@"document.querySelectorAll('input[type=text]')[0].value = '%@'", _username];
         [_webView stringByEvaluatingJavaScriptFromString:setUsername];
-        
-        NSString *setPassword = [NSString stringWithFormat:@"document.getElementsByTagName('input')[1].value = '%@'", _password];
+
+        NSString *setPassword = [NSString stringWithFormat:@"  document.querySelectorAll('input[type=password]')[0].value = '%@'", _password];
         [_webView stringByEvaluatingJavaScriptFromString:setPassword];
 
         [_webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByTagName('form')[0].submit()"];
+    }
 
-    } else if ([address rangeOfString:@"oauth2/authenticate"].location != NSNotFound) {
-        // The Allow / Deny form
-        
-        NSString *submitForm = @"document.getElementsByTagName('input')[1].click()";
+    // If we're redirected to the same page its because the auth is bad probably
+    else if([address rangeOfString:loginpath].location != NSNotFound && _attemptedLogin){
+        [self.delegate authHelperLoginFailedWithDescription:@"Wrong Username / Password combo"];
+    }
+
+    // If we're asked for the Allow / Deny form hit the allow button
+    else if ([address rangeOfString:@"oauth2/authenticate"].location != NSNotFound) {
+        NSString *submitForm = @"document.getElementsByTagName('input[type=submit]')[0].click()";
         [_webView stringByEvaluatingJavaScriptFromString:submitForm];
 
-    } else {
+    } else if ([address rangeOfString:@"put.io/login"].location != NSNotFound) {
+        // Do nothing as this is whilst we're grabbing the tokens
+    }
 
-        [self.delegate authHelperLoginFailedWithDescription:@"Wrong Username / Password combo"];
+    // No idea what's going on anymore, show the OAuth Screen and hope for the best.
+    else {
+        [self.delegate authHelperHasDeclaredItScrewed];
     }
 }
 
