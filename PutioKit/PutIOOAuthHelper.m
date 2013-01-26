@@ -32,7 +32,7 @@
 - (void)loginWithUsername:(NSString *)username andPassword:(NSString *)password {
     _webView.delegate = self;
     _attemptedLogin = NO;
-    
+
     [self loadAuthPage];
     _username = username;
     _password = password;
@@ -79,10 +79,15 @@
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
-   
+
     if (error.code == 101) {
         NSString *code = [error userInfo][@"NSErrorFailingURLStringKey"];
-        NSArray *URLComponents = [code componentsSeparatedByString:@"="];
+        NSString *seperator = @"%3D";
+
+        if ([code rangeOfString:@"="].location != NSNotFound) {
+            seperator = @"=";
+        }
+        NSArray *URLComponents = [code componentsSeparatedByString:seperator];
 
         // We've successfully got a code from the callback
         // now we just need to get the OAuth token
@@ -104,9 +109,8 @@
 
 - (void)webViewDidFinishLoad:(UIWebView *)aWebView {
     NSString *address = aWebView.request.URL.absoluteString;
-    NSString *loginpath = @"v2/oauth2/login";
-    NSLog(@"%@", address);
-    
+    NSString *loginpath = @"oauth2/login";
+
     // Load the Oauth Page, look for the right input boxes then submit the form
     if([address rangeOfString:loginpath].location != NSNotFound && !_attemptedLogin){
         _attemptedLogin = YES;
