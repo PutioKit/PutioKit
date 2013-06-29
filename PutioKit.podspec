@@ -16,6 +16,9 @@ Pod::Spec.new do |s|
   s.ios.frameworks  = 'UIKit'
   s.osx.framework   = 'CoreServices'
   s.requires_arc = true
-  s.source_files = 'PutioKit/**/*.{h,m}'
+  s.ios.source_files = 'PutioKit/**/*.{h,m}'
+  s.osx.source_files = 'PutioKit/Categories', 'PutioKit/Models', 'PutioKit/PutIOClient.{h,m}',
+    'PutioKit/PutIONetworkConstants.{h,m}', 'PutioKit/V2PutIOAPIClient.{h,m}', 
+    'PutioKit/PutioKit.h'
   s.dependency 'AFNetworking', '~> 1.0'
 end
