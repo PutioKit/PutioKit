@@ -11,8 +11,10 @@ Pod::Spec.new do |s|
   
   s.authors      = { "Orta Therox" => "orta.therox@gmail.com", "other author" => "and email address" }
   s.source       = { :git => "https://github.com/PutioKit/PutioKit.git", :branch => "orta", :commit => "HEAD" }
-  s.platform     = :ios, '5.0'
-  s.frameworks   = 'UIKit'
+  s.ios.deployment_target = '5.0'
+  s.osx.deployment_target = '10.8'
+  s.ios.frameworks  = 'UIKit'
+  s.osx.framework   = 'CoreServices'
   s.requires_arc = true
   s.source_files = 'PutioKit/**/*.{h,m}'
   s.dependency 'AFNetworking', '~> 1.0'
