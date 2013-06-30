@@ -212,7 +212,7 @@
         }
     }
     failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"request failed %@ (%i)", operation.request.URL, operation.response.statusCode);
+        NSLog(@"request failed %@ (%li)", operation.request.URL, (long)operation.response.statusCode);
         failure(error);
     }];
 }
