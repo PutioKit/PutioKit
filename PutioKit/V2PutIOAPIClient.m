@@ -207,8 +207,10 @@
         if (!responseObject) {
             onAddFailure();
             return;
-    }
+        }
+        
         NSDictionary *json = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil];
+        
         if ([json[@"status"] isEqualToString:@"ERROR"]) {
             onAddFailure();
         } else {
