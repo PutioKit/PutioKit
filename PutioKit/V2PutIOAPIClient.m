@@ -190,20 +190,16 @@
     }];
 }
 
-
-- (void)uploadFile:(NSString *)path :(void(^)(id userInfoObject))onComplete addFailure:(void (^)())onAddFailure networkFailure:(void (^)(NSError *error))failure
-{
+- (void)uploadFile:(NSString *)path :(void(^)(id userInfoObject))onComplete addFailure:(void (^)())onAddFailure networkFailure:(void (^)(NSError *error))failure{
     NSString *fileName = [path lastPathComponent];
     NSData *fileContent = [NSData dataWithContentsOfFile:path];
     NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys: self.apiToken, @"oauth_token", nil];
     
-    NSURLRequest *request = [self multipartFormRequestWithMethod:@"POST" path:@"/v2/files/upload" parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData> formData)
-    {
+    NSURLRequest *request = [self multipartFormRequestWithMethod:@"POST" path:@"/v2/files/upload" parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData> formData){
         [formData appendPartWithFileData:fileContent name:@"file" fileName:fileName mimeType:@"application/octet-stream"];
     }];
     
-    AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject)
-    {
+    AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject){
         if (!responseObject) {
             onAddFailure();
             return;
@@ -224,7 +220,6 @@
     
     [operation start];
 }
-
 
 #pragma mark internal API
 
