@@ -190,6 +190,37 @@
     }];
 }
 
+- (void)uploadFile:(NSString *)path :(void(^)(id userInfoObject))onComplete addFailure:(void (^)())onAddFailure networkFailure:(void (^)(NSError *error))failure{
+    NSString *fileName = [path lastPathComponent];
+    NSData *fileContent = [NSData dataWithContentsOfFile:path];
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys: self.apiToken, @"oauth_token", nil];
+    
+    NSURLRequest *request = [self multipartFormRequestWithMethod:@"POST" path:@"/v2/files/upload" parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData> formData){
+        [formData appendPartWithFileData:fileContent name:@"file" fileName:fileName mimeType:@"application/octet-stream"];
+    }];
+    
+    AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject){
+        if (!responseObject) {
+            onAddFailure();
+            return;
+        }
+        
+        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil];
+        
+        if ([json[@"status"] isEqualToString:@"ERROR"]) {
+            onAddFailure();
+        } else {
+            onComplete(json);
+        }
+    }
+    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"failure in file upload %@", error);
+        failure(error);
+    }];
+    
+    [operation start];
+}
+
 #pragma mark internal API
 
 - (void)genericGetAtPath:(NSString *)path withParams:(NSDictionary *)params :(void(^)(id JSON))onComplete failure:(void (^)(NSError *error))failure {
