@@ -33,6 +33,9 @@
         else if ([statusType isEqualToString:@"COMPLETED"]) {
             object.transferStatus = PKTransferStatusCompleted;
         }
+        else if ([statusType isEqualToString:@"IN_QUEUE"]) {
+            object.transferStatus = PKTransferStatusQueued;
+        }
         else {
             object.transferStatus = PKTransferStatusUnknown;
         }
