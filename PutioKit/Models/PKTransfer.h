@@ -11,6 +11,7 @@
 typedef enum {
     PKTransferStatusUnknown,
     PKTransferStatusCompleted,
+    PKTransferStatusQueued,
     PKTransferStatusDownloading,
     PKTransferStatusSeeding,
     PKTransferStatusError
