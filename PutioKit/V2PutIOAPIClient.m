@@ -193,9 +193,8 @@
 - (void)uploadFile:(NSString *)path :(void(^)(id userInfoObject))onComplete addFailure:(void (^)())onAddFailure networkFailure:(void (^)(NSError *error))failure{
     NSString *fileName = [path lastPathComponent];
     NSData *fileContent = [NSData dataWithContentsOfFile:path];
-    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys: self.apiToken, @"oauth_token", nil];
     
-    NSURLRequest *request = [self multipartFormRequestWithMethod:@"POST" path:@"/v2/files/upload" parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData> formData){
+    NSURLRequest *request = [self multipartFormRequestWithMethod:@"POST" path:[NSString stringWithFormat:@"/v2/files/upload?oauth_token=%@", self.apiToken] parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData){
         [formData appendPartWithFileData:fileContent name:@"file" fileName:fileName mimeType:@"application/octet-stream"];
     }];
     
@@ -243,9 +242,18 @@
         }
     }
     failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"request failed %@ (%li)", operation.request.URL, (long)operation.response.statusCode);
+        NSLog(@"request failed %@ (%li)", [self removeOAuthToken:operation.request.URL.absoluteString], (long)operation.response.statusCode);
         failure(error);
     }];
+}
+
+// Removes OAuth Token from URL. For safer logging purposes.
+- (NSString*)removeOAuthToken:(NSString*)URL
+{
+    NSError *error = nil;
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"oauth_token=([a-z0-9]+)" options:NSRegularExpressionCaseInsensitive error:&error];
+    
+    return [regex stringByReplacingMatchesInString:URL options:0 range:NSMakeRange(0, [URL length]) withTemplate:@"oauth_token=XXXXXXXX"];
 }
 
 @end
