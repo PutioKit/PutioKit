@@ -193,9 +193,8 @@
 - (void)uploadFile:(NSString *)path :(void(^)(id userInfoObject))onComplete addFailure:(void (^)())onAddFailure networkFailure:(void (^)(NSError *error))failure{
     NSString *fileName = [path lastPathComponent];
     NSData *fileContent = [NSData dataWithContentsOfFile:path];
-    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys: self.apiToken, @"oauth_token", nil];
     
-    NSURLRequest *request = [self multipartFormRequestWithMethod:@"POST" path:@"/v2/files/upload" parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData> formData){
+    NSURLRequest *request = [self multipartFormRequestWithMethod:@"POST" path:[NSString stringWithFormat:@"/v2/files/upload?oauth_token=%@", self.apiToken] parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData){
         [formData appendPartWithFileData:fileContent name:@"file" fileName:fileName mimeType:@"application/octet-stream"];
     }];
     
