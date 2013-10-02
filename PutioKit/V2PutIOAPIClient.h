@@ -38,4 +38,6 @@
 - (void)requestTorrentOrMagnetURLAtPath:(NSString *)path :(void(^)(id userInfoObject))onComplete addFailure:(void (^)())onAddFailure networkFailure:(void (^)(NSError *error))failure;
 
 - (void)uploadFile:(NSString *)path :(void(^)(id userInfoObject))onComplete addFailure:(void (^)())onAddFailure networkFailure:(void (^)(NSError *error))failure;
+
+- (NSString*)removeOAuthToken:(NSString*)URL;
 @end

@@ -242,9 +242,18 @@
         }
     }
     failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"request failed %@ (%li)", operation.request.URL, (long)operation.response.statusCode);
+        NSLog(@"request failed %@ (%li)", [self removeOAuthToken:operation.request.URL.absoluteString], (long)operation.response.statusCode);
         failure(error);
     }];
+}
+
+// Removes OAuth Token from URL. For safer logging purposes.
+- (NSString*)removeOAuthToken:(NSString*)URL
+{
+    NSError *error = nil;
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"oauth_token=([a-z0-9]+)" options:NSRegularExpressionCaseInsensitive error:&error];
+    
+    return [regex stringByReplacingMatchesInString:URL options:0 range:NSMakeRange(0, [URL length]) withTemplate:@"oauth_token=XXXXXXXX"];
 }
 
 @end
